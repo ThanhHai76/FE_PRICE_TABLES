@@ -11,83 +11,64 @@ a {
 }
 body {
   font-family: "Montserrat", sans-serif;
+  max-width: 1920px;
 }
 
-.wrapper {
-  width: 100%;
+/* ---------------header main-menu--------------- */
+.header {
   background-color: #2c2e3d;
 }
-.pricing-table {
-  width: 100%;
-  background-color: #ffffff;
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
 }
-.container,
-.title-light {
-  margin: 0 9.1%;
-  height: 960px;
-  /* background-color: #2c2e3d; */
-}
-
-/* ---------------main-menu--------------- */
-.main-menu {
-  width: 100%;
-  background-color: #2c2e3d;
+.container.main-menu {
+  margin: 0 auto;
   padding-top: 35px;
   color: #ffffff;
-}
-.main-menu .menu-header {
   display: flex;
+  justify-content: space-between;
 }
-.main-menu .logo {
-  float: left;
+.container.main-menu .logo {
   font-family: Montserrat;
 }
-.main-menu .logo img {
+.container.main-menu .logo img {
   vertical-align: middle;
   transform: translateY(-7px);
 }
-.main-menu .logo span {
+.container.main-menu .logo span {
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
 }
-
-.main-menu .nav-header {
-  float: left;
-  margin-left: 60px;
+.container .top-nav {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
 }
-.main-menu .nav-header li {
-  float: left;
+.container .top-nav .nav-header {
+  display: flex;
 }
-.main-menu .nav-header a {
+.container .top-nav .nav-header a {
   display: block;
   line-height: 30px;
   color: #83909d;
   margin: 0 24px;
   font-size: 14px;
   font-weight: 700;
-  text-align: center;
   position: relative;
 }
-
-.main-menu .nav-right-header {
-  float: right;
-  margin-left: 50px;
-}
-.main-menu .nav-right-header li {
+.container .top-nav .nav-right-header li {
   line-height: 30px;
   float: left;
   display: block;
   margin: 0 20px;
 }
 
-.main-menu a:hover {
+.container.main-menu a:hover {
   color: #00bcd4;
   cursor: pointer;
-}
-.top-nav a.icon {
-  display: none;
 }
 .main-menu .nav-header .active {
   margin-top: -5px;
@@ -95,21 +76,23 @@ body {
   color: #ffffff;
   border: 2px solid #ffffff;
 }
-.main-menu .nav-header .icon {
+.main-menu .top-nav .icon {
   height: 18px;
+}
+.top-nav a.icon {
+  display: none;
 }
 
 /* ----------------slider-dark---------------- */
 .slider-dark {
   color: #ffffff;
-  max-height: 900px;
   text-align: center;
-  padding-top: 60px;
+  padding: 60px 0;
 }
 .slider-dark img,
 .slider img {
   position: relative;
-  margin: 120px auto 0px;
+  margin-top: 120px;
 }
 .slider-dark h1 {
   font-family: "Montserrat - Ultra Light";
@@ -124,29 +107,36 @@ body {
   font-weight: 100 !important;
 }
 .slider-dark p {
-  margin: 65px auto 0;
   line-height: 25px;
-  margin-left: 60px;
+  color: #ffffff;
+  font-family: "Source Sans Pro";
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 37px;
+}
+.slider-dark .buttons {
+  margin: 80px 0 150px;
+  justify-content: center;
 }
 .slider-dark .btn {
   display: inline-block;
   border-radius: 50px;
   font-weight: 500;
   padding: 10px 20px;
-  margin: 80px 25px 150px;
   cursor: pointer;
 }
 .slider-dark .purchase {
   color: #ffffff;
   border: 2px solid #ffffff;
   background-color: #2c2e3d;
+  margin-right: 20px;
 }
 .slider-dark .more-detail {
   color: #00bcd4;
   border: 2px solid #00bcd4;
   background-color: #2c2e3d;
 }
-.slider-dark li {
+.slider-dark .round li {
   position: relative;
   display: inline;
   color: #ffffff;
@@ -159,7 +149,7 @@ body {
 }
 
 /* ---------arrow---------- */
-.slider-dark a {
+.slider-dark .fa {
   color: #ffffff;
   z-index: 9;
   position: relative;
@@ -169,14 +159,14 @@ body {
   background-color: #212331;
   padding: 20px;
   width: 80px;
-  transform: translateX(-120px) translateY(-450px);
+  transform: translateX(-90px) translateY(-450px);
 }
 .fa-arrow-right {
   float: right;
   background-color: #212331;
   padding: 20px;
   width: 80px;
-  transform: translateX(120px) translateY(-450px);
+  transform: translateX(90px) translateY(-450px);
 }
 .fa-arrow-left:hover,
 .fa-arrow-right:hover {
@@ -184,46 +174,34 @@ body {
 }
 
 /* ------------- title-light ----------- */
-.title-light {
-  max-height: 590px;
+.container.title-light {
+  margin: 140px auto;
 }
-.title-light h2 {
+.container.title-light h2 {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
-  margin: 140px auto 77px;
+  padding-bottom: 80px;
   font-family: "Myriad Pro";
 }
-.title-light span {
+.container.title-light span {
   font-weight: bold;
 }
-.title-light p {
-  clear: left;
-  font-size: 16pt;
-  line-height: 32px;
-  margin-bottom: 160px;
+.container.title-light p {
+  font-size: 16px;
+  color: #5f727f;
+  font-weight: 400;
+  line-height: 25px;
   font-family: "Source Sans Pro";
-}
-
-/* --------------tables--------------------- */
-.tables {
-  margin: 0 9.1%;
-}
-
-.columns {
-  float: left;
-  margin-bottom: 100px;
-}
-.pricing-table {
-  float: left;
 }
 
 /* ---------------------- slider ------------------- */
 .slider {
-  width: 100%;
+  max-width: 1920px;
+}
+.slider {
   background-color: #494b58;
   text-align: center;
-  float: left;
   color: #ffffff;
 }
 .slider h1 {
@@ -233,15 +211,19 @@ body {
   margin: 75px auto 100px;
 }
 .slider p {
-  margin: 0 9.1%;
-  line-height: 25px;
+  line-height: 37px;
   text-align: justify;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: "Source Sans Pro";
 }
 .slider .btn {
+  font-size: 20px;
+  text-transform: uppercase;
   border-radius: 50px;
   font-weight: 400;
   padding: 10px 20px;
-  margin: 80px 25px 150px;
+  margin: 80px 0 150px;
   cursor: pointer;
 }
 .slider .purchase {
@@ -252,20 +234,20 @@ body {
 
 /* -----------------footer .widgets ----------------- */
 .footer .widgets {
-  padding: 120px 9.1%;
+  max-width: 1920px;
   background-color: #212331;
-  float: left;
+  padding: 130px 0;
+}
+.footer .widgets .container {
+  display: flex;
+  justify-content: space-between;
 }
 .widgets .columns {
   width: 20%;
-  margin-left: 40px;
   position: relative;
   color: #ffffff;
 }
-.widgets .columns .header {
-  float: left;
-}
-.widgets .columns .header p {
+.widgets .columns .title-column p {
   text-align: justify;
   padding: 40px 0;
   line-height: 20px;
@@ -363,13 +345,13 @@ textarea:hover {
   display: flex;
   flex-wrap: wrap;
   background-color: #212331;
+  text-align: center;
 }
 
 .widgets .columns .flex-container > div {
   background-color: #b6c6c9;
   width: 60px;
   margin: 2px;
-  text-align: center;
   line-height: 60px;
   font-size: 30px;
 }
@@ -385,15 +367,16 @@ small {
 }
 /* -----------------footer .meunu-socials----------- */
 .footer .menu-socials {
-  width: 100%;
-  float: left;
-  padding: 0 9.1%;
-  text-align: center;
+  max-width: 1920px;
   background-color: #181828;
+}
+.menu-socials .container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
   font-size: 14px;
 }
 .menu-socials .copy-right {
-  float: left;
   margin: 40px 0;
   font-size: 14px;
   color: #ffffff;
@@ -401,35 +384,32 @@ small {
 .menu-socials .copy-right span {
   color: #00bcd4;
 }
-.menu-socials .footer-nav .nav {
-  margin: 0 25%;
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-nav .nav {
+  display: flex;
 }
 .footer-nav .nav li {
-  float: left;
   display: block;
   font-family: "Source Sans Pro";
-  text-align: center;
   position: relative;
   margin: 40px 0px;
 }
 .footer-nav .nav .text a {
   color: #ffffff !important;
   padding: 0px 30px;
-  border-right: 1px solid #dddddd;
+  border-right: 1px solid #333146;
 }
-
-.footer-nav .nav-right {
-  float: right;
+.nav-right {
+  display: flex;
 }
-.footer-nav .nav-right li {
-  float: left;
-}
-.footer-nav .nav-right .social a {
+.nav-right .social a {
   position: relative;
-  float: left;
   margin: 40px 10px;
   display: block;
-  text-align: center;
 }
 .nav-right .social .fa-twitter {
   color: #16a7b9;
