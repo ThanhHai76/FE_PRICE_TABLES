@@ -4,7 +4,6 @@
   }
   .container {
     margin: auto;
-    padding: 0 9.1%;
     position: relative;
   }
   .top-nav .nav-header li,
@@ -25,6 +24,9 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .container {
+    max-width: 614px;
+  }
   .container .top-nav .nav-header a {
     line-height: 60px;
   }
@@ -54,14 +56,14 @@
   .top-nav.responsive .nav-right-header {
     flex-direction: column;
     text-align: center;
-    float: right;
+    /* float: right; */
     right: 10% !important;
   }
   .top-nav.responsive li:first-child {
     margin-top: 10px;
   }
   .top-nav.responsive a.icon {
-    float: right;
+    /* float: right; */
     display: block;
   }
 }
@@ -100,26 +102,24 @@
   }
 
   .fa-arrow-left {
-    display: none;
-    padding: 10px;
-    transform: translateX(-60px) translateY(-540px);
+    transform: translateX(0px) translateY(-560px);
     width: 60px;
   }
   .fa-arrow-right {
-    display: none;
-    padding: 10px;
-    transform: translateX(60px) translateY(-540px);
+    transform: translateX(0px) translateY(-560px);
     width: 60px;
   }
 }
 
 /* --------------title-light------------------ */
 @media only screen and (max-width: 1024px) {
+  .container.title-light {
+    margin: 80px auto;
+  }
   .title-light h2 {
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 24px !important;
+    padding-bottom: 60px !important;
     margin: 40px auto 40px;
-    font-family: "Myriad Pro";
   }
   .title-light p {
     text-align: justify;
@@ -131,15 +131,23 @@
 
 /* -------------tables 1--------------------- */
 @media only screen and (max-width: 1024px) {
+  .tables {
+    padding: 60px 0;
+  }
+  .pricing-table {
+    margin-bottom: 60px;
+  }
   .pricing-table.table1 .columns {
     width: 25%;
   }
   .price .title-column {
     font-size: 10px !important;
   }
+  .pricing-table.table1 .columns.new .title-column {
+    line-height: 4px;
+  }
   .pricing-table.table1 .columns.new .price {
     background-color: #ffffff;
-    transform: translateY(-9px);
   }
   .price li {
     padding: 8px !important;
@@ -161,7 +169,7 @@
   .pricing-table.table1 .columns.new .new-title {
     font-size: 5px;
     padding: 7px 5px;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
   .price .subtitle h1 {
     font-weight: 300 !important;
@@ -180,29 +188,27 @@
   .pricing-table.table2 .columns.adv .new-title {
     padding: 7px 5px;
     font-size: 7px;
-    transform: translateY(-15px) translateX(90px);
-  }
-  .pricing-table.table2 .columns.new .price {
-    transform: translateY(-7%);
+    transform: translateY(-15px) translateX(80px);
   }
   .pricing-table.table2 .columns.new .title-column {
-    max-height: 60px;
+    max-height: 40px;
+    line-height: 7px;
   }
   .pricing-table.table2 .title-column h2 {
     font-size: 7px;
   }
 
   /* -----------------table 3----------------- */
-  .pricing-table.table3{
+  .pricing-table.table3 {
     margin-top: 0;
   }
   .pricing-table.table3 .price {
     border-radius: 20px;
   }
   .pricing-table.table3 .price .price-number div {
-    padding-top: 12px;
-    margin: 0;
-    min-height: 50px;
+    padding-top: 30px;
+    margin: 0 10px;
+    min-height: 80px;
     height: 0 !important;
   }
   .pricing-table.table3 .order .button {
@@ -211,61 +217,32 @@
   .pricing-table.table3 .columns.news .new-title {
     font-size: 5px;
     padding: 7px 5px;
-    transform: translateY(-18px);
+    transform: translateY(-10px);
   }
 
   /* ------------------table 4 ------------------- */
-  .pricing-table-dark.table4 .price-number div {
-    margin: 0;
-    height: 50px;
-    padding-top: 12px;
+  .pricing-table-dark.table4 .price-number .external {
+    border-radius: 50%;
+    margin: 10px;
+    height: 100px;
     transform: none;
   }
+  .pricing-table-dark.table4 .price-number .internal {
+    margin: 0;
+    height: auto;
+    padding: 30px 0 !important;
+    transform: none !important;
+  }
   .pricing-table-dark.table4 .new-title {
-    width: 45%;
     font-size: 8px;
-    padding: 15px 0;
-    transform: translateY(-10px);
+    padding: 15px 10px;
+    transform: translateY(-10px) translateX(-40px);
   }
   .pricing-table-dark.table4 .title-column.pink small {
     font-size: 3px !important;
   }
-}
-
-/* ---------------------------------------------- */
-@media only screen and (max-width: 812px){
-  .pricing-table.table2 .columns.adv .new-title {
-    transform: translateY(-15px) translateX(65px);
-  }
-  .pricing-table.table3 .price .price-number div {
-    padding-top: 40px;
-    min-height: 100px;
-    margin: auto;
-  }
-  .pricing-table-dark.table4 .price-number div {
-    margin: 0;
-    height: auto;
-    padding: 35px 0 !important;
-  }
-}
-@media only screen and (max-width: 411px){
-  .pricing-table.table2 .columns.adv .new-title {
-    transform: translateY(-15px) translateX(36px);
-  }
-  .pricing-table.table3 .price .price-number div{
-    padding-top: 12px;
-    min-height: 50px;
-  }
-  .pricing-table-dark.table4 .price-number div {
-    margin: 0;
-    padding: 15px 0 !important;
-  }
-  .pricing-table-gray.table5 .new-title img{
-    transform: translateY(-60px) translateX(-67px) scale(0.5) !important;
-  }
-  .pricing-table-gray.table5 .new-title span{
-    transform: translateY(-30px) translateX(-42px) !important;
-    font-size: 8px;
+  .price-number .external.pink {
+    border: 8px solid rgba(238, 65, 124, 0.3);
   }
 }
 
@@ -290,12 +267,8 @@
     height: 80px;
     padding-top: 35px !important;
   }
-  .pricing-table-gray.table5 .new-title img{
-    transform: translateY(-60px) translateX(-92px) scale(0.5);
-  }
-  .pricing-table-gray.table5 .new-title span{
-    transform: translateY(-30px) translateX(-67px);
-    font-size: 8px;
+  .pricing-table-gray.table5 .new-title {
+    transform: translateY(-55px) translateX(-25px) scale(0.5);
   }
 
   /* ---------------table 6----------------- */
@@ -311,12 +284,8 @@
     font-size: 15px;
     transform: translateY(-25px) translateX(-40px);
   }
-  .pricing-table-white.table6 .new-title img{
-    transform: translateY(-35px) translateX(20px) scale(0.4)
-  }
-  .pricing-table-white.table6 .new-title span{
-    transform: translateY(-5px) translateX(-20px);
-    font-size: 8px;
+  .pricing-table-white.table6 .new-title {
+    transform: translateY(-35px) translateX(20px) scale(0.4);
   }
 
   /* ---------------table 7--------------------- */
@@ -328,20 +297,13 @@
     padding: 10px 0;
   }
   .pricing-table-gray.table7 .title-column {
-    max-height: 120px;
-  }
-  .pricing-table-gray.table7 .columns.teens .title-column {
-    max-height: 140px;
+    height: 120px !important;
   }
   .pricing-table-gray.table7 .title-column .radius {
     display: none;
   }
-  .pricing-table-gray.table7 .new-title img{
-    transform: translateY(-40%) translateX(-40%) scale(0.5);
-  }
-  .pricing-table-gray.table7 .new-title span{
-    transform: translateY(30%) translateX(-380%) rotate(-45deg);
-    font-size: 8px;
+  .pricing-table-gray.table7 .new-title {
+    transform: translateY(-30px) translateX(-25px) rotate(-45deg) scale(0.5);
   }
 
   /* ---------------table 8----------------------- */
@@ -375,12 +337,8 @@
     height: 30px !important;
   }
 
-  .pricing-table-dark.table8 .columns.new .new-title img{
-    transform: translateY(-30%) translateX(-20%) scale(0.4);
-  }
-  .pricing-table-dark.table8 .columns.new .new-title span{
-    transform: translateY(90%) translateX(-295%);
-    font-size: 6px;
+  .pricing-table-dark.table8 .columns.new .new-title {
+    transform: translateY(-17px) translateX(-15px) scale(0.4);
   }
 }
 
@@ -391,12 +349,16 @@
   }
   .slider p {
     font-size: 12px;
+    line-height: 25px;
   }
   .slider .btn {
     margin: 70px 25px 70px;
   }
 
   /* ------------footer---------------- */
+  .footer .widgets {
+    padding: 60px 0;
+  }
   .footer .widgets .container {
     padding-top: 70px;
     display: flex;
@@ -405,35 +367,26 @@
   }
   .widgets .columns {
     width: auto;
-    margin: auto;
+    /* margin: auto; */
   }
 
-  .widgets .columns .recent-post,
-  .widgets .columns .useful-link {
-    margin: 50px 10% 0 0;
-    width: 40%;
-  }
-  .widgets .columns.flex {
-    display: flex;
-    flex-direction: row;
-    margin: 30px 0;
-  }
   .widgets .columns.none-flex {
     display: block;
-    margin: 30px 0;
+    margin: 0;
   }
-  .widgets .columns .project{
+  .widgets .columns .project {
     margin-top: 50px !important;
   }
-  .widgets .columns input, textarea,
+  .widgets .columns input,
+  textarea,
   .widgets .columns .email button {
     width: 100%;
   }
   .widgets .columns .project,
-  .widgets .columns .newsletter{
+  .widgets .columns .newsletter {
     margin-top: 0;
   }
-  .widgets .columns .feed{
+  .widgets .columns .feed {
     margin-right: 5%;
   }
 
@@ -442,16 +395,76 @@
     display: flex;
     flex-direction: column;
   }
-  .footer-nav{
+  .footer-nav {
     justify-content: center;
   }
   .footer-nav .nav .text a {
     padding: 0 10px;
   }
-  .footer-nav-right .nav-right{
+  .footer-nav-right .nav-right {
     justify-content: center;
   }
-  .menu-socials .footer-nav .nav li{
+  .menu-socials .footer-nav .nav li {
     margin: 10px 0px;
+  }
+}
+
+/* --------------------max-width: 768px -------------------------- */
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 500px;
+  }
+  .pricing-table.table2 .columns.adv .new-title {
+    transform: translateY(-15px) translateX(65px);
+  }
+  .pricing-table.table3 .price .price-number div {
+    padding-top: 40px;
+    min-height: 100px;
+    margin: auto;
+  }
+  .pricing-table-dark.table4 .price-number .external {
+    height: 90px;
+  }
+  .pricing-table-dark.table4 .price-number .internal {
+    transform: translateY(-14%);
+    padding: 25px 0 !important;
+  }
+  .pricing-table-dark.table4 .new-title {
+    transform: translateY(-10px) translateX(-55px);
+  }
+}
+/* --------------------max-width: 411px------------------------ */
+@media only screen and (max-width: 411px) {
+  .container {
+    max-width: 280px;
+  }
+  .pricing-table.table2 .columns.adv .new-title {
+    transform: translateY(-15px) translateX(30px);
+  }
+  .pricing-table.table3 .price .price-number div {
+    padding-top: 12px;
+    min-height: 50px;
+  }
+  .pricing-table-dark.table4 .price-number .external {
+    height: 52px;
+    margin: 0;
+  }
+  .pricing-table-dark.table4 .price-number .internal {
+    padding: 8px 0 !important;
+    font-size: 5px;
+  }
+  .pricing-table-dark.table4 .new-title {
+    font-size: 8px;
+    padding: 10px 5px;
+    transform: translateY(-10px) translateX(-75px);
+  }
+  .pricing-table-gray.table5 .new-title {
+    transform: translateY(-55px) translateX(-30px) scale(0.4);
+  }
+  .fa-arrow-left {
+    transform: translateX(0px) translateY(-700px);
+  }
+  .fa-arrow-right {
+    transform: translateX(0px) translateY(-700px);
   }
 }

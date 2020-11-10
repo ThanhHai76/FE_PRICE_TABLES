@@ -6,6 +6,10 @@
   display: flex;
   margin-bottom: 100px;
 }
+.tables{
+  max-width: 1920px;
+  padding: 120px 0;
+}
 
 .pricing-table.table1 .columns,
 .pricing-table.table3 .columns {
@@ -23,12 +27,13 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  transition: 0.5s;
+  transition-timing-function: ease;
 }
 .pricing-table.table1 .price:hover {
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
+  cursor: pointer;
 }
 .pricing-table.table1 .price .title-column {
   color: #5f727f;
@@ -47,7 +52,7 @@
 .price li:last-child {
   border-top: none;
   border-bottom: none;
-  padding: 50px 0;
+  padding: 60px 0;
 }
 .price .through {
   text-decoration: line-through;
@@ -90,15 +95,18 @@ li small {
   background-color: #a289e8;
 }
 
-.pricing-table.table1 .columns.new .price {
+.pricing-table.table1 .columns .price:hover {
   background-color: #ffffff;
   transform: translateY(-25px);
 }
+/* .pricing-table.table1 .columns .price:hover > .order{
+  height: 180px;
+} */
 .pricing-table .new-title {
   position: absolute;
   padding: 15px 10px;
   border-radius: 50%;
-  display: inline-block;
+  display: block;
   text-transform: uppercase;
   z-index: 1;
 }
@@ -106,8 +114,12 @@ li small {
   margin: 0 10%;
   background-color: #393d50;
   color: #ffffff;
-  transform: translateY(-50px);
+  transform: translateY(-25px);
   font-size: 12px;
+}
+
+.pricing-table.table1 .columns.new .title-column {
+  line-height: 10px;
 }
 .columns.new .button {
   background-color: #83bce9;
@@ -116,19 +128,21 @@ li small {
 .pricing-table.table1 .order .button {
   background-color: #393d50;
   color: white;
-  padding: 7px 20px;
+  padding: 10px 25px;
   font-size: 18px;
   font-weight: 500;
-  border-radius: 20px;
+  border-radius: 30px;
+}
+.pricing-table.table1 .order .button:hover{
+  background-color: #83bce9;
 }
 
 /* --------------------pricing-table2----------------- */
-.pricing-table.table2{
+.pricing-table.table2 {
   justify-content: space-between;
 }
 .pricing-table.table2 .columns {
   width: 31%;
-  border: 1px solid #dfe5e8;
   font-family: "Source Sans Pro", serif;
 }
 .pricing-table.table2 .new-title {
@@ -141,16 +155,26 @@ li small {
 }
 .pricing-table.table2 .price {
   background-color: #ffffff;
+  border: 1px solid #dddddd;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
 }
-.price .lg {
+.pricing-table.table2 .price li:nth-child(2n+1),
+.pricing-table.table2 .columns.adv li:nth-child(2n+0)
+{
   background-color: #f0f3f2;
+}
+.pricing-table.table2 .columns.adv li:nth-child(2n+1){
+  background-color: #ffffff;
 }
 .pricing-table.table2 .price li {
   border: none;
 }
-.pricing-table.table2 .columns:hover {
+.pricing-table.table2 .price:hover {
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid black;
+  transform: translateY(-30px);
+  cursor: pointer;
 }
 .pricing-table.table2 div:last-child {
   margin-right: 0;
@@ -160,10 +184,11 @@ li small {
   font-size: 24px;
   font-weight: 100;
   color: #8693a1;
+  text-transform: none;
 }
 .pricing-table.table2 .title-column {
   color: #0f9ab1;
-  background-color: #393d50;
+  background-color: #393d50 !important;
   padding: 45px;
   line-height: normal;
   font-size: 36px;
@@ -171,13 +196,7 @@ li small {
   text-transform: uppercase;
 }
 .pricing-table.table2 .columns.new .title-column {
-  height: 192px;
-}
-.pricing-table.table2 .columns.new .price {
-  transform: translateY(-5%);
-}
-.pricing-table.table2 .title-column span {
-  font-weight: 400;
+  height: 165px;
 }
 .pricing-table.table2 .title-column small {
   font-size: 14px;
@@ -201,7 +220,7 @@ li small {
 }
 
 /* ----------------------pricing-table 3----------------------- */
-.pricing-table.table3{
+.pricing-table.table3 {
   justify-content: space-between;
   margin-top: 150px;
 }
@@ -212,6 +231,8 @@ li small {
   text-align: center;
   border: none;
   border-radius: 50px;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
 }
 .pricing-table.table3 .price li {
   border: none;
@@ -230,24 +251,14 @@ li small {
   color: #ffffff;
   background-color: #00bcd4;
 }
-.pricing-table.table3 .price:hover{
+.pricing-table.table3 .price:hover {
   background-color: #393d50;
-  transform: translateY(-3%);
+  transform: translateY(-30px);
   cursor: pointer;
 }
-/* .pricing-table.table3 .columns.news .price:hover{
-  transform: translateY(-10%) !important;
-} */
-.pricing-table.table3 .columns.new {
+/* .pricing-table.table3 .columns.new {
   transform: translateY(-3%);
-}
-.pricing-table.table3 .columns.new .button {
-  color: #ffffff;
-  background-color: #00bcd4;
-}
-.pricing-table.table3 .columns.new .price {
-  background-color: #393d50;
-}
+} */
 .pricing-table.table3 .price-number {
   color: #3c3950;
 }
@@ -276,26 +287,19 @@ li small {
 .pricing-table.table3 .columns.new hr {
   width: 60%;
 }
-.pricing-table.table3 .columns.new li {
-  color: #99a9b5;
-}
 .pricing-table.table3 .new-title {
   background-color: #f44336;
   color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
   margin-left: 10%;
   padding: 20px 15px;
-  transform: translateY(-40px);
-  position: relative;
-}
-.pricing-table.table3 .columns.news .price {
-  transform: translateY(-7%);
+  transform: translateY(-35px);
 }
 
 /* ------------------pricing-table 4--------------- */
-.middle .tables-dark{
-  max-width: 1920px;
+.middle .tables-dark {
   background-color: #1b1b2b;
-  padding-top: 90px;
 }
 .pricing-table-dark.table4 {
   display: flex;
@@ -313,19 +317,15 @@ li small {
   color: #ffffff;
   border-radius: 50%;
   padding: 25px 15px;
-  width: 30%;
-  margin: auto;
-  transform: translateY(-30px);
-  position: relative;
+  margin-left: 90px;
+  transform: translateY(-25px) translateX(10px);
+  position: absolute;
   text-transform: uppercase;
   z-index: 1;
 }
-.pricing-table-dark.table4 .columns.new .price {
-  transform: translateY(-8%);
-}
 
-.pricing-table-dark.table4 .columns.medium .price{
-    background-color: #393d50;
+.pricing-table-dark.table4 .columns.medium .price {
+  background-color: #393d50;
 }
 .pricing-table-dark.table4 .price li {
   border: none;
@@ -334,48 +334,67 @@ li small {
   width: 22.5%;
   font-family: "Source Sans Pro", serif;
 }
-.pricing-table-dark.table4 .price-number div {
+.pricing-table-dark.table4 .price-number .internal {
   border-radius: 50%;
-  margin: 0 25px 0;
-  height: 200px;
+  height: 180px;
   padding-top: 50px;
   color: #ffffff;
+}
+.pricing-table-dark.table4 .price-number .external {
+  border-radius: 50%;
+  margin: 0 25px 0;
   transform: translateY(-10%);
 }
-.price-number .blue{
+.price-number .external.blue {
+  border: 8px solid rgba(0, 188, 212, 0.3);
+}
+.price-number .external.violet {
+  border: 8px solid rgba(166, 55, 236, 0.3);
+}
+.price-number .external.pink {
+  border: 16px solid rgba(238, 65, 124, 0.3);
+}
+.price-number .external.orange {
+  border: 8px solid rgba(255, 153, 78, 0.3);
+}
+
+.price-number .internal.blue {
   background-color: #00bcd4;
 }
-.price-number .violet {
+.price-number .internal.violet {
   background-color: #a637ec;
 }
- .price-number .pink {
+.price-number .internal.pink {
   background-color: #ee417c;
 }
-.price-number .orange {
+.price-number .internal.orange {
   background-color: #ff994e;
-}
-.pricing-table-dark.table4 .price-number {
-  border-radius: 50%;
 }
 .pricing-table-dark.table4 .title-column {
   background-color: #393d50;
   font-size: 24px;
   font-weight: 600;
 }
-.title-column.blue, .fa.blue {
+.pricing-table-dark.table4 .columns.medium .price-number{
+  padding-bottom: 0 !important;
+}
+.title-column.blue,
+.fa.blue {
   color: #00bcd4;
 }
-.title-column.violet, .fa.violet {
+.title-column.violet,
+.fa.violet {
   color: #a637ec;
 }
-.title-column.pink, .fa.pink {
+.title-column.pink,
+.fa.pink {
   color: #ee417c;
 }
-.title-column.orange, .fa.orange {
+.title-column.orange,
+.fa.orange {
   color: #ff994e;
 }
 .pricing-table-dark.table4 .subtitle {
-  font-size: medium;
   padding: 20px 0;
   background-color: #313445;
 }
@@ -387,7 +406,7 @@ li small {
   border-radius: 20px;
   font-weight: 500;
 }
-.pricing-table-dark.table4 .order .button:hover{
+.pricing-table-dark.table4 .order .button:hover {
   background-color: #ffffff;
   color: #3c3950;
   font-weight: 500;

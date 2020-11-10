@@ -21,9 +21,9 @@ body {
 .container {
   max-width: 1170px;
   margin: 0 auto;
+  width: 100%;
 }
 .container.main-menu {
-  margin: 0 auto;
   padding-top: 35px;
   color: #ffffff;
   display: flex;
@@ -37,7 +37,7 @@ body {
   transform: translateY(-7px);
 }
 .container.main-menu .logo span {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
@@ -47,34 +47,36 @@ body {
   justify-content: flex-end;
   text-align: center;
 }
-.container .top-nav .nav-header {
+.container .top-nav .nav-header,
+.container .top-nav .nav-right-header {
   display: flex;
+  justify-content: space-between;
 }
 .container .top-nav .nav-header a {
-  display: block;
   line-height: 30px;
   color: #83909d;
   margin: 0 24px;
   font-size: 14px;
   font-weight: 700;
-  position: relative;
 }
 .container .top-nav .nav-right-header li {
   line-height: 30px;
-  float: left;
-  display: block;
   margin: 0 20px;
 }
+.container .nav-right-header li:last-child{
+  margin-right: 0;
+}
 
-.container.main-menu a:hover {
+.container.main-menu .nav-header a:hover {
   color: #00bcd4;
   cursor: pointer;
 }
 .main-menu .nav-header .active {
-  margin-top: -5px;
-  font-weight: bold;
-  color: #ffffff;
   border: 2px solid #ffffff;
+}
+.main-menu .nav-header .active a{
+  font-weight: 700;
+  color: #ffffff;
 }
 .main-menu .top-nav .icon {
   height: 18px;
@@ -149,24 +151,25 @@ body {
 }
 
 /* ---------arrow---------- */
-.slider-dark .fa {
+.arrow .fa {
   color: #ffffff;
   z-index: 9;
   position: relative;
+  max-width: 1920px;
 }
 .fa-arrow-left {
   float: left;
   background-color: #212331;
   padding: 20px;
   width: 80px;
-  transform: translateX(-90px) translateY(-450px);
+  transform: translateX(0px) translateY(-500px);
 }
 .fa-arrow-right {
   float: right;
   background-color: #212331;
   padding: 20px;
   width: 80px;
-  transform: translateX(90px) translateY(-450px);
+  transform: translateX(0px) translateY(-500px);
 }
 .fa-arrow-left:hover,
 .fa-arrow-right:hover {
@@ -243,28 +246,36 @@ body {
   justify-content: space-between;
 }
 .widgets .columns {
-  width: 20%;
+  width: calc(25% - 40px);
   position: relative;
   color: #ffffff;
 }
+.widgets .columns:last-child {
+  /* width: 25%; */
+}
+.widgets .columns .mg-bt{
+  margin-bottom: 70px;
+}
 .widgets .columns .title-column p {
   text-align: justify;
-  padding: 40px 0;
+  padding-top: 40px;
   line-height: 20px;
   font-size: 14px;
-  color: #dfe5e8;
+  color: #99a9b5;
 }
 .widgets .columns h1 {
   text-transform: uppercase;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   padding-bottom: 30px;
+  color: #feffff;
 }
 .widgets .columns .contact {
   line-height: 25px;
   font-size: 14px;
+  color: #99a9b5;
 }
-.contact a {
+.widgets .columns .contact a {
   color: #16a7b9;
 }
 .widgets .columns .contact hr {
@@ -279,10 +290,10 @@ body {
   color: #f50057;
 }
 
+/* ---recent-post--- */
 .widgets .columns .recent-post {
-  margin-bottom: 50px;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
 }
 .widgets .columns .recent-post .fa-circle {
   font-size: 50px;
@@ -297,23 +308,36 @@ body {
 }
 .widgets .columns .recent-post .flex-li div {
   margin-left: 10px;
+  color: #99a9b5;
 }
 .widgets .columns .recent-post p {
   color: #16a7b9;
+  font-size: 14px;
+  line-height: 20px;
 }
 .widgets .columns .recent-post small {
   float: right;
 }
 
+.widgets .columns .useful-link .links{
+  color: #99a9b5;
+  list-style-type: disc;
+  margin: auto;
+}
 .widgets .columns .useful-link .links li {
   border-bottom: 1px dashed #dfe5e8;
-  padding: 15px 0;
+  font-size: 16px;
+  line-height: 40px;
+}
+.widgets .columns .useful-link .links li:hover{
+  color: #04a8be;
 }
 .widgets .useful-link .links li:last-child {
   border: none;
 }
 
-.widgets .columns input,
+/* -----Email Us---- */
+.widgets .email input,
 textarea {
   padding: 10px;
   margin: 10px 0;
@@ -321,49 +345,95 @@ textarea {
   background: #181828;
   text-align: left;
   border: 1px solid #dfe5e8;
+  width: 100%;
 }
-.widgets .columns input:hover,
+.widgets .email input:hover,
 textarea:hover {
   border: 1px solid #16a7b9;
   border-radius: 5px;
 }
-.widgets .columns .email button {
+.widgets .email .input-email {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.widgets .email .input-email i {
+  position: absolute;
+}
+.widgets .email .input-email .fa {
+  padding: 20px;
+  color: #323544;
+  min-width: 50px;
+}
+.widgets .email button {
   background-color: #394050;
   color: #99a9b5;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
-  padding: 10px 20%;
+  padding: 15px 0;
   border-radius: 5px;
+  width: 100%;
 }
 
-.widgets .columns .project {
-  margin-top: 60px;
-}
+/* ---Project--- */
 .widgets .columns .flex-container {
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+  grid-gap: 7px;
   background-color: #212331;
-  text-align: center;
 }
 
 .widgets .columns .flex-container > div {
   background-color: #b6c6c9;
-  width: 60px;
-  margin: 2px;
-  line-height: 60px;
-  font-size: 30px;
+  width: 80px;
+  height: 80px;
 }
+
+/* ---newsletter---- */
 .widgets .columns .newsletter {
-  margin-top: 125px;
+  text-align: left;
 }
-.widgets .columns .newsletter p,
-input,
-small {
+.widgets .columns .newsletter p{
+  color: #798592;
+  font-size: 16px;
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  line-height: 25px;
+}
+.widgets .columns .newsletter input {
+  padding: 10px;
+  margin: 10px 0;
   font-size: 14px;
-  margin-bottom: 15px;
   line-height: 20px;
+  color: #99a9b5;
+  background: #181828;
+  width: 80%;
+}
+.widgets .newsletter small {
+  color: #4a4b5b;
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.widgets .newsletter span {
+  color: #00bcd4;
+  font-style: normal;
+}
+.widgets .newsletter .email-add {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.widgets .newsletter .email-add .button {
+  width: 20%;
+  font-size: 20px;
+  padding: 12px;
+  background-color: #394050;
+  color: #ffffff;
 }
 /* -----------------footer .meunu-socials----------- */
 .footer .menu-socials {
