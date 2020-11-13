@@ -42,7 +42,7 @@ body {
   color: #ffffff;
   text-transform: uppercase;
 }
-.container .top-nav {
+.container .top-nav .nav {
   display: flex;
   justify-content: flex-end;
   text-align: center;
@@ -153,7 +153,6 @@ body {
 /* ---------arrow---------- */
 .arrow .fa {
   color: #ffffff;
-  z-index: 9;
   position: relative;
   max-width: 1920px;
 }
