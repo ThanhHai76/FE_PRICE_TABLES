@@ -21,7 +21,7 @@
 .pricing-table.table1 .price {
   border: 1px solid #dfe5e8;
   transition-timing-function: ease;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 }
 .pricing-table.table1 .price li:first-child{
   border-bottom: none !important;
@@ -180,13 +180,9 @@ li small {
   transition-duration: 0.5s;
 }
 .pricing-table.table2 .price li:nth-child(2n+1)
-/* .pricing-table.table2 .columns.adv li:nth-child(2n+0) */
 {
   background-color: #f0f3f2;
 }
-/* .pricing-table.table2 .columns.adv li:nth-child(2n+1){
-  background-color: #ffffff;
-} */
 .pricing-table.table2 .price li {
   border: none;
 }
@@ -195,9 +191,18 @@ li small {
 }
 .pricing-table.table2 .price:hover {
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
-  border: 1px solid black;
+  /* border: 1px solid black; */
   cursor: pointer;
-  height: 102%;
+}
+.pricing-table.table2 .price:hover > li{
+  border-left:  1px solid black;
+  border-right:  1px solid black;
+}
+.pricing-table.table2 .price:hover > li:first-child{
+  border: none;
+}
+.pricing-table.table2 .price:hover > li:last-child{
+  border-bottom:  1px solid black;
 }
 .pricing-table.table2 .price .title-column div{
   position: relative;
@@ -205,6 +210,7 @@ li small {
   background: #393d50;
   transition-timing-function: ease;
   transition-duration: 0.5s;
+  border-bottom: none;
 }
 .pricing-table.table2 .columns.new .title-column div{
   padding: 35px !important;
@@ -212,7 +218,7 @@ li small {
 }
 .pricing-table.table2 .price:hover > .title-column div{
   transform: translateY(-30px);
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-bottom: none;
 }
 .pricing-table.table2 div:last-child {
