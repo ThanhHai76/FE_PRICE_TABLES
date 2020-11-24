@@ -1,8 +1,12 @@
 /* -------------------pricing-table 5-8------------- */
 
 /* --------------------pricing-table 5------------- */
+/* .tables{
+  max-width: 1920px;
+} */
 .tables-gray{
   background-color: #cad3d3;
+  padding: 120px 0;
 }
 .pricing-table-gray.table5 {
   display: flex;
@@ -19,7 +23,7 @@
 .pricing-table-gray.table5 .price-number {
   border-radius: 50%;
   position: relative;
-  padding: 30px 25px;
+  padding: 40px 35px;
   display: inline-block;
   z-index: 1;
   font-size: 12px;
@@ -31,18 +35,28 @@
 .pricing-table-gray.table5 .price li:nth-child(2n+1){
   background-color: #f0f3f2;
 }
-
+.pricing-table-gray.table5 .price li:last-child{
+  padding: 70px 0;
+}
 .pricing-table-gray.table5 .columns {
-  width: 31%;
+  width: 362px;
   font-family: "Source Sans Pro", serif;
 }
 .pricing-table-gray.table5 .title-column {
-  font-size: 36px;
-  padding-top: 120px;
+  padding-top: 125px;
   color: #ffffff;
   font-weight: 200;
-  height: 270px;
+  height: 272px;
   text-transform: uppercase;
+  line-height: 30px;
+}
+.pricing-table-gray.table5 .title-column h1{
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+.pricing-table-gray.table5 .title-column small{
+  color: #b6c6c9;
+  font-size: 14px;
 }
 .pricing-table-gray.table5 .title-column.ocean{
   background-image: url(../images/pricing-table5_1.png);
@@ -65,7 +79,7 @@
   background-color: #ffffff;
   text-transform: uppercase;
   font-size: 24px;
-  padding: 10px 20px;
+  padding: 15px 30px;
 }
 .pricing-table-gray.table5 .order.b1 .button{
   border: 1px solid #00bcd4;
@@ -97,13 +111,16 @@
   transform: translateY(-70px) translateX(-10px);
   position: absolute;
   background: url(../images/Shape_1.png) no-repeat;
-  padding: 25px 18px;
+  padding: 28px 20px;
   color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 /* --------------------pricing-table 6----------- */
 .tables-white{
   background-color: #ffffff;
+  padding: 140px 0 120px;
 }
 .pricing-table-white.table6 {
   display: flex;
@@ -111,33 +128,56 @@
   color: black;
 }
 .pricing-table-white.table6 .price {
-  border: 1px solid #dfe5e8 ;
   background-color: #ffffff;
 }
 .pricing-table-white.table6 .columns {
-  width: 33.3%;
+  width: 391px;
   font-family: "Source Sans Pro", serif;
 }
 
 .pricing-table-white.table6 .title-column {
-  height: 270px;
+  height: 272px;
   font-size: 36px;
-  padding-top: 90px;
-  color: #ffffff;
-  font-weight: 600;
+  padding-top: 143px;
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
-  opacity: 1.0 !important;
+}
+.pricing-table-white.table6 .columns.new .title-column{
+  padding-top: 108px;
+}
+.pricing-table-white.table6 .title-column h1{
+  line-height: 54px;
+}
+.pricing-table-white.table6 .columns.new .title-column h1{
+  line-height: 50px;
+}
+.pricing-table-white.table6 .title-column small{
+  font-weight: 400;
+  font-family: "Source Sans Pro";
+  letter-spacing: normal;
+  opacity: 1;
 }
 .pricing-table-white.table6 .title-column p{
   font-weight: 200 !important;
 }
 .pricing-table-white.table6 .price li {
-  border: none;
+  border-left: 1px solid #dfe5e8 ;
+  border-right: 1px solid #dfe5e8;
+  border-bottom: none;
   text-align: left;
   padding-left: 45px;
+  color: #5f727f;
+}
+.pricing-table-white.table6 .price li:first-child{
+  border: none ;
+}
+.pricing-table-white.table6 .price li:last-child{
+  border-bottom: 1px solid #dfe5e8;
 }
 .pricing-table-white.table6 .price li:nth-child(2n+1){
-  background-color: #f0f3f2;
+  background-color: #f4f6f7;
 }
 
 .columns.basic .title-column{
@@ -154,11 +194,11 @@
   border-radius: 50%;
   margin-left: 45px;
   position: absolute;
-  padding: 25px 25px;
+  padding: 30px 30px;
   z-index: 1;
   font-size: 24px;
   background-color: #393d50;
-    transform: translateY(-45px);
+  transform: translateY(-45px);
 }
 .pricing-table-white.table6 .price-number small{
   color: #93a2ae;
@@ -184,7 +224,7 @@
   border: none;
   background-color: #b6c6c9;
   color: #ffffff;
-  border-radius: 30px;
+  border-radius: 25px;
 }
 .pricing-table-white.table6 .order .button:hover{
   background-color: #2c2e3d;
@@ -197,12 +237,15 @@
   transform: translateY(-30px) translateX(125px);
   position: absolute;
   background: url(../images/Shape_1.png) no-repeat;
-  padding: 25px 18px;
+  padding: 28px 20px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 /* ---------------------pricing-table 7------------- */
 .tables-gray.table7{
   background-color: #e8edeb;
+  padding: 150px 0;
 }
 .pricing-table-gray.table7{
   display: flex;
@@ -210,7 +253,7 @@
   text-align: center;
 }
 .pricing-table-gray.table7 .columns{
-  width: 22.3%;
+  width: 261px;
 }
 .pricing-table-gray.table7 .price{
   background: #ffffff;
@@ -220,8 +263,12 @@
 .pricing-table-gray.table7 .price li{
   border-bottom: 1px solid #dfe5e8;
 }
+.pricing-table-gray.table7 .price li:nth-child(7){
+  border-bottom: none;
+}
 .pricing-table-gray.table7 .price li:last-child{
   border-bottom: none;
+  padding: 40px 0 50px;
 }
 .pricing-table-gray.table7 .title-column{
   height: 300px;
@@ -279,7 +326,7 @@
   border-radius: 20px;
   text-transform: uppercase;
   font-weight: 100;
-  padding: 7px 20px;
+  padding: 10px 20px;
 }
 .pricing-table-gray.table7 .price .order .button:hover{
   background-color: #00bcd4;
@@ -287,7 +334,7 @@
 .pricing-table-gray.table7 .price:hover{
   background-color: #c5d2d4;
   cursor: pointer;
-  height: 102%;
+  height: calc(100% + 35px);
 }
 .pricing-table-gray.table7 .price:hover > .title-column{
   background-color: #ffffff;
@@ -295,7 +342,6 @@
 .pricing-table-gray.table7 .price .title-column .title-header{
   transition-timing-function: ease;
   transition: transform 0.5s;
-  transition-timing-function: 0.5s;
 }
 .pricing-table-gray.table7 .price:hover>.title-column .title-header{
   transform: translateY(-40px);
@@ -325,27 +371,27 @@
   position: absolute;
   color: #ffffff;
   background: url(../images/Shape_2.png) no-repeat;
-  padding: 25px 18px;
+  padding: 28px 20px;
+  font-weight: 700;
+  font-size: 12px;
 }
 .pricing-table-gray.table7 .new-title span{
   color: #ffffff;
 }
 
 /* ----------------------pricing-table 8------------------ */
-.tables-dark.tables8{
+.tables-dark.table8{
   background-color: #3c3a43;
+  padding: 190px 0 120px;
 }
 .pricing-table-dark.table8{
   display: flex;
   justify-content: space-between;
   text-align: center;
-  /* padding-bottom: 100px; */
 }
 .pricing-table-dark.table8 .columns{
-  width: 22.3%;;
-}
-.pricing-table-dark.table8 .price li{
-  padding: 15px;
+  width: 261px;
+  height: fit-content;
 }
 .pricing-table-dark.table8 .price{
   background-color: #ffffff;
@@ -353,17 +399,24 @@
   transition-duration: 0.5s;
 }
 .pricing-table-dark.table8 .columns.third .price{
-  transform: translateY(-50px);
+  transform: translateY(-80px);
 }
 .pricing-table-dark.table8 .price:hover{
   cursor: pointer;
+  height: calc(100% + 20px);
 }
 .pricing-table-dark.table8 .price:hover>.title-column{
   background-color: #393d50;
 }
+.pricing-table-dark.table8 .price:hover>.title-column .price-number{
+  border: 3px solid #ffffff;
+}
+.pricing-table-dark.table8 .price:hover .price-number h1{
+  color: #00bcd4;
+}
 .pricing-table-dark.table8 .title-column{
   background-color: #5f727f;
-  height: 284px;
+  height: 285px;
 }
 .pricing-table-dark.table8 .title-column .subtitle{
   color: #ffffff;
@@ -377,9 +430,7 @@
   padding-top: 50px;
   border-radius: 50%;
 }
-.pricing-table-dark.table8 .title-column .price-number:hover{
-  border: 3px solid #ffffff;
-}
+
 .pricing-table-dark.table8 .price .price-number h1{
   font-size: 42px;
   font-weight: 700;
@@ -397,29 +448,28 @@
   color: #ffffff;
   text-transform: uppercase;
   font-size: 16px;
-  font-weight: 800;
-  padding: 10px 20px;
+  font-weight: 700;
+  padding: 14px 23px;
 }
 .pricing-table-dark.table8 .price .order .button:hover{
   background-color: #ffffff;
   color: #00bcd4;
   border: 1px solid #00bcd4;
-  margin: 20px auto;
 }
 .pricing-table-dark.table8 .columns.third .title-column{
-  height: 335px;
+  height: 365px;
 }
-.pricing-table-dark.table8 .price li:last-child {
-  border-top: none;
-  padding-top: 35px;
-  height: 100px;
+.pricing-table-dark.table8 .price li:nth-child(7){
+  border-bottom: none;
 }
-
+.pricing-table-dark.table8 .price li:last-child{
+  padding: 40px 0 60px;
+}
 .pricing-table-dark.table8 .columns.new .new-title{
   font-family: Montserrat;
   font-size: 12px;
   font-weight: 700;
-  transform: translateX(40%);
+  transform: translateX(-5px) translateY(-20px);
   position: absolute;
   background: url(../images/Shape_3.png) no-repeat;
   padding: 22px 10px;

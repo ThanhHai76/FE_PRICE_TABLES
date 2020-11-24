@@ -94,19 +94,21 @@ body {
 .slider-dark img,
 .slider img {
   position: relative;
-  margin-top: 120px;
+  margin-top: 170px;
 }
-.slider-dark h1 {
-  font-family: "Montserrat - Ultra Light";
+.slider-dark .title-slider{
   font-size: 70px;
-  font-weight: 400;
   line-height: 50px;
   margin: 110px auto 70px;
   text-transform: uppercase;
 }
-.slider-dark span {
+.slider-dark .title-slider h1 {
+  font-family: "Montserrat - Ultra Light";
+  font-weight: 600;
+}
+.slider-dark .title-slider span {
   text-transform: uppercase;
-  font-weight: 100 !important;
+  font-weight: 200;
 }
 .slider-dark p {
   line-height: 25px;
@@ -238,7 +240,7 @@ body {
 .footer .widgets {
   max-width: 1920px;
   background-color: #212331;
-  padding: 130px 0;
+  padding: 130px 0 100px;
 }
 .footer .widgets .container {
   display: flex;
@@ -323,7 +325,7 @@ body {
 .widgets .columns .useful-link .links li {
   border-bottom: 1px dashed #dfe5e8;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 35px;
 }
 .widgets .columns .useful-link .links li:hover{
   color: #04a8be;
@@ -372,7 +374,7 @@ textarea:hover {
   width: 100%;
 }
 
-/* ---Project--- */
+/* --- Project --- */
 .widgets .columns .flex-container {
   margin-top: 10px;
   display: grid;
@@ -381,11 +383,42 @@ textarea:hover {
   grid-gap: 7px;
   background-color: #212331;
 }
-
-.widgets .columns .flex-container > div {
-  background-color: #b6c6c9;
+.widgets .columns .flex-container div {
   width: 80px;
   height: 80px;
+}
+.project .flex-container > div:nth-child(1),
+.project .flex-container > div:nth-child(6){
+  background-color: #828e97;
+}
+.project .flex-container > div:nth-child(2),
+.project .flex-container > div:nth-child(4){
+  background-color: #5c6973;
+}
+.project .flex-container > div:nth-child(3),
+.project .flex-container > div:nth-child(5){
+  background-color: #4b565d;
+}
+
+/* -----Flickr Feed----- */
+.flex-container > div:nth-child(1),
+.flex-container > div:nth-child(6){
+  background-color: #b6c6c9;
+}
+.flex-container > div:nth-child(2),
+.flex-container > div:nth-child(4),
+.flex-container > div:nth-child(9){
+  background-color: #828e97;
+}
+.flex-container > div:nth-child(3),
+.flex-container > div:nth-child(8){
+  background-color: #bcbcbc;
+}
+.flex-container > div:nth-child(5){
+  background-color: #5f727f;
+}
+.flex-container > div:nth-child(7){
+  background-color: #dfe5e8;
 }
 
 /* ---newsletter---- */
@@ -430,6 +463,17 @@ textarea:hover {
   padding: 12px;
   background-color: #394050;
   color: #ffffff;
+}
+
+.round-footer{
+  position: relative;
+  padding-top: 10px;
+  text-align: center;
+  letter-spacing: 5px;
+  color: #394050;
+}
+.round-footer .active{
+  color: #99a9b5;
 }
 /* -----------------footer .meunu-socials----------- */
 .footer .menu-socials {

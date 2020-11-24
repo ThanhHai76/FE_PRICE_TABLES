@@ -54,7 +54,9 @@
         <div class="container">
             <div class="slider-dark">
                 <img src="./images/icon-slider.png" alt="" class="icon-slider">
-                <h1><span>Pricing</span> Tables</h1>
+                <div class="title-slider">
+                    <h1><span>Pricing</span> Tables</h1>
+                </div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ullam minima iure aliquam
                     sed. Delectus quos obcaecati id similique! Numquam commodi praesentium neque est ex cumque
                     voluptate voluptatum aliquam doloremque?</p>
@@ -79,7 +81,7 @@
 
     <main class="middle">
         <div class="container title-light">
-            <h2>LOREM <span> IPSUM</span></h2>
+            <h2 id="title">LOREM <span> IPSUM</span></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -97,7 +99,7 @@
         <div class="container">
 
             <!-- Pricing Table 1 -->
-            <div class="pricing-table table1">
+            <div class="pricing-table table1" id="table1">
                 <div class="columns">
                     <ul class="price">
                         <li class="title-column">
@@ -189,7 +191,7 @@
             </div>
 
             <!-- Pricing Table 2 -->
-            <div class="pricing-table table2">
+            <div class="pricing-table table2" id="table2">
                 <div class="columns">
                     <ul class="price">
                         <li class="title-column">
@@ -211,7 +213,7 @@
                                     aria-hidden="true"></i> ORDER</a></li>
                     </ul>
                 </div>
-                <div class="columns adv">
+                <div class="columns new">
 
                     <ul class="price">
                         <li class="title-column">
@@ -236,10 +238,10 @@
                                     aria-hidden="true"></i> ORDER</a></li>
                     </ul>
                 </div>
-                <div class="columns new">
+                <div class="columns">
                     <ul class="price">
                         <li class="title-column" style="color: white;">
-                          <div>
+                          <div id="ultimate">
                             ULTIMATE <h2>$299 Per Month</h2>
                             <small>The best price/quality plan *</small>
                           </div>
@@ -261,7 +263,7 @@
             </div>
 
             <!-- Pricing Table 3 -->
-            <div class="pricing-table table3">
+            <div class="pricing-table table3" id="table3">
                 <div class="columns">
                     <ul class="price">
                         <li class="subtitle">
@@ -315,7 +317,7 @@
                         <li class="order"><a href="#" class="button">ORDER NOW</a></li>
                     </ul>
                 </div>
-                <div class="columns new">
+                <div class="columns ultimate">
                     <ul class="price">
                         <li class="subtitle">
                             <div>
@@ -374,7 +376,7 @@
             <div class="container">
 
                 <!-- Pricing Table 4 -->
-                <div class="pricing-table-dark table4">
+                <div class="pricing-table-dark table4" id="table4">
                     <div class="columns">
                         <ul class="price">
 
@@ -451,7 +453,7 @@
                         </ul>
                     </div>
                     <div class="columns new">
-                        <h3 class="new-title">
+                        <h3 class="new-title" id="new-title">
                             New!
                         </h3>
                         <ul class="price">
@@ -484,7 +486,7 @@
         <div class="tables tables-gray">
             <div class="container">
                 <!-- Pricing Table 5 -->
-                <div class="pricing-table-gray table5">
+                <div class="pricing-table-gray table5" id="table5">
                     <div class="columns">
 
                         <div class="price-number">
@@ -494,7 +496,7 @@
                         <ul class="price">
 
                             <li class="title-column ocean">
-                                <span>Ocean</span>
+                                <span><h1>Ocean</h1></span>
 
                             </li>
                             <li class="subtitle">
@@ -538,7 +540,7 @@
                             <h3 style="color: #9fd996;">$599</h3> Per tour
                         </div>
                         <ul class="price">
-                            <li class="title-column forest" style="color: white;">Forest</li>
+                            <li class="title-column forest" style="color: white;"><h1>Forest</h1></li>
                             <li class="subtitle">
                                 <h1>Subtitle Goes Here</h1>
                                 <small>Subtitle second line goes here</small>
@@ -559,7 +561,7 @@
         <div class="tables tables-white">
             <div class="container">
                 <!-- Pricing Table 6 -->
-                <div class="pricing-table-white table6">
+                <div class="pricing-table-white table6" id="table6">
                     <div class="columns basic">
 
                         <div class="price-number">
@@ -623,7 +625,7 @@
                             <h3>$599</h3> <small>/ Per tour</small>
                         </div>
                         <ul class="price ">
-                            <li class="title-column ">Life <p>Tarrif</p>
+                            <li class="title-column "><h1>Life <p>Tarrif</p></h1>
                             </li>
                             <li class="subtitle">
                                 <h1>Subtitle Goes Here</h1>
@@ -651,7 +653,7 @@
 
             <div class="container">
                 <!-- Pricing Table 7 -->
-                <div class="pricing-table-gray table7">
+                <div class="pricing-table-gray table7" id="table7">
                     <div class="columns">
                         <ul class="price">
 
@@ -781,7 +783,7 @@
         <div class="tables tables-dark table8">
             <div class="container">
                 <!-- Pricing Table 8 -->
-                <div class="pricing-table-dark table8">
+                <div class="pricing-table-dark table8" id="table8">
                     <div class="columns">
                         <ul class="price">
 
@@ -807,12 +809,12 @@
                         </ul>
                     </div>
                     <div class="columns new">
-
+                  
                         <ul class="price">
-                            <h3 class="new-title">
-                                <span>NEW</span>
-                            </h3>
                             <li class="title-column">
+                                <h3 class="new-title">
+                                    <span>NEW</span>
+                                </h3>
                                 <div class="price-number">
                                     <h1>$10</h1> <small>/month</small>
                                 </div>
@@ -918,7 +920,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="contact mg-bt">
+                    <div class="contact">
                         <h1>Contact <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
                         <address>
                             <i class="fa fa-map-marker" aria-hidden="true"></i> Address <br>
@@ -972,7 +974,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="useful-link mg-bt">
+                    <div class="useful-link">
                         <h1>Useful Links <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
                         <ul class="links">
                             <li>General information for users</li>
@@ -1000,7 +1002,7 @@
                             <button>Send message</button>
                         </form>
                     </div>
-                    <div class="project mg-bt">
+                    <div class="project" id="project">
                         <h1>Project/Client? <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
                         <div class="flex-container">
                             <div></div>
@@ -1009,6 +1011,11 @@
                             <div></div>
                             <div></div>
                             <div></div>
+                        </div>
+                        <div class="round-footer">
+                            <i class="fa fa-circle active" aria-hidden="true"></i>
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <i class="fa fa-circle" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -1027,7 +1034,7 @@
                             <div></div>
                         </div>
                     </div>
-                    <div class="newsletter mg-bt">
+                    <div class="newsletter">
                         <h1>Newsletter <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
                         <p>
                             Subscibe to our MailChimp newsletter and stay up to date with all events coming straight in
