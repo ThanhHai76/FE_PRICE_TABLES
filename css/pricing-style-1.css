@@ -48,8 +48,6 @@
   font-size: 25px;
   font-family: "Myriad Pro";
   text-transform: uppercase;
-  transition-timing-function: ease;
-  transition-duration: 0.5s;
 }
 .pricing-table.table1 .price .title-column{
   padding: 0;
@@ -58,7 +56,7 @@
   position: relative;
   border: 1px solid #dfe5e8;
   border-bottom: none;
-  padding: 20px;
+  padding: 30px;
   background-color: #f0f3f2;
   transition-timing-function: ease;
   transition-duration: 0.5s;
@@ -70,6 +68,7 @@
 .price li {
   border-bottom: 1px solid #dfe5e8;
   padding: 20px;
+  font-size: 18px;
 }
 .price li:last-child {
   border-top: none;
@@ -94,7 +93,7 @@
 .price .price-number span {
   font-size: 65px;
 }
-.price .subtitle {
+.pricing-table.table1 .price .subtitle {
   height: 80px;
 }
 .price .subtitle h1 {
@@ -122,7 +121,7 @@ li small {
 
 .pricing-table .new-title {
   position: absolute;
-  padding: 15px 10px;
+  padding: 18px 10px;
   border-radius: 50%;
   display: block;
   text-transform: uppercase;
@@ -132,7 +131,7 @@ li small {
   margin: 0 10px;
   background-color: #393d50;
   color: #ffffff;
-  transform: translateY(-45px);
+  transform: translateY(-55px);
   font-size: 12px;
 }
 
@@ -245,8 +244,12 @@ li small {
   color: #5f727f;
   opacity: 1;
 }
+.pricing-table.table2 .subtitle{
+  padding: 30px 0;
+  line-height: 25px;
+}
 .pricing-table.table2 .subtitle h1 {
-  color: #0f9ab1;
+  color: #22c5da;
 }
 .pricing-table.table2 .order .button {
   color: #00bcd4;
@@ -284,6 +287,9 @@ li small {
   cursor: pointer;
   height: calc(100% + 30px);
 }
+.pricing-table.table3 .price:hover > .title-column h1{
+  color: #ffffff;
+}
 .pricing-table.table3 .price:hover > .subtitle div{
   transform: translateY(-30px);
   background-color: #393d50;
@@ -291,6 +297,9 @@ li small {
 }
 .pricing-table.table3 .price li {
   border: none;
+}
+.pricing-table.table3 .price:hover li{
+  color: #99a9b5;
 }
 .pricing-table.table3 .price li:first-child{
   padding: 0;
@@ -309,33 +318,42 @@ li small {
   color: #ffffff;
   background-color: #00bcd4;
 }
-.pricing-table.table3 .price-number {
+.pricing-table.table3 .price-number span {
   color: #3c3950;
 }
 .pricing-table.table3 .price-number div {
   border-radius: 50%;
   margin: 0 20px;
   height: 200px;
-  padding-top: 60px;
+  padding-top: 70px;
   background-color: #ffffff;
+  line-height: 30px;
+}
+.pricing-table.table3 .price-number small{
+  font-size: 25px;
+  color: #00bcd4;
 }
 .pricing-table.table3 .columns.ultimate .price-number {
   color: #393d50;
-}
-.pricing-table.table3 .columns.ultimate .subtitle small {
-  font-size: 10px;
 }
 .pricing-table.table3 .columns.ultimate .title-column{
   padding: 10px 0;
   line-height: 20px;
 }
+.pricing-table.table3 .price:hover > .title-column small{
+  color: #5f727f;
+}
 .pricing-table.table3 .price .subtitle div{
   position: relative;
-  padding: 20px;
+  padding-top: 40px;
   background: #f0f3f2;
+  line-height: 25px;
   transition-timing-function: ease;
   transition-duration: 0.5s;
   border-radius: 50px 50px 0 0;
+}
+.pricing-table.table3 .subtitle small{
+  font-size: 14px;
 }
 .pricing-table.table3 .price .title-column {
   font-weight: 700;
@@ -347,7 +365,7 @@ li small {
   border: 0.5px solid #00bcd4;
   width: 30%;
 }
-.pricing-table.table3 .columns.ultimate hr {
+.pricing-table.table3 .price:hover hr {
   width: 60%;
 }
 .pricing-table.table3 .new-title {
@@ -356,8 +374,8 @@ li small {
   font-size: 12px;
   font-weight: 700;
   margin-left: 10%;
-  padding: 20px 15px;
-  transform: translateY(-50px);
+  padding: 15px 15px;
+  transform: translateY(-60px);
 }
 
 /* ------------------pricing-table 4--------------- */
@@ -436,11 +454,25 @@ li small {
 }
 .pricing-table-dark.table4 .title-column {
   background-color: #393d50;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 700;
 }
 .pricing-table-dark.table4 .columns.medium .price-number{
   padding-bottom: 0;
+}
+.pricing-table-dark.table4 .price-number{
+  font-weight: 300;
+  color: #ffffff;
+}
+.pricing-table-dark.table4 .price-number span{
+  font-size: 55px;
+}
+.pricing-table-dark.table4 .price-number small{
+  font-size: 24px;
+  opacity: 1;
+}
+.pricing-table-dark.table4 .price .fa-check{
+  font-weight: 300;
 }
 .title-column.blue,
 .fa.blue {
@@ -454,6 +486,11 @@ li small {
 .fa.pink {
   color: #ee417c;
 }
+.title-column.pink small{
+  color: #5f727f;
+  opacity: 1;
+  font-size: 14px;
+}
 .title-column.orange,
 .fa.orange {
   color: #ff994e;
@@ -461,6 +498,13 @@ li small {
 .pricing-table-dark.table4 .subtitle {
   padding: 20px 0;
   background-color: #313445;
+  line-height: 25px;
+  color: #99a9b5;
+}
+.pricing-table-dark.table4 .subtitle small{
+  color: #5f727f;
+  font-size: 14px;
+  opacity: 1;
 }
 
 .pricing-table-dark.table4 .order .button {

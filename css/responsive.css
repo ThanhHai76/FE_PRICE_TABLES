@@ -263,7 +263,7 @@
     display: flex;
     flex-direction: column;
     width: -webkit-fill-available;
-    align-items: center;
+    /* align-items: center; */
     width: calc(100% - 50px);
   }
   .widgets .columns {
@@ -283,6 +283,12 @@
   .widgets .columns .useful-link,
   .widgets .columns .project{
     padding-bottom: 70px;
+  }
+
+  .menu-socials .scroll-up{
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
   }
 
   /* ---------footer menu-socials------------ */
@@ -319,6 +325,7 @@
   .pricing-table-gray,
   .pricing-table-white {
     grid-template-columns: auto !important;
+    grid-gap: 60px;
   }
   .fa-arrow-left {
     /* transform: translateY(-570px); */
@@ -329,7 +336,7 @@
     display: none;
   }
   .pricing-table.table2 .title-column .new-title {
-    transform: translateY(-75px) translateX(100px);
+    transform: translateY(-75px) translateX(65px);
   }
   .pricing-table-dark.table4 #new-title {
     transform: translateY(-20px) translateX(5px);
