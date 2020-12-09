@@ -188,8 +188,6 @@ li small {
   padding: 0;
 }
 .pricing-table.table2 .price:hover {
-  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
-  /* border: 1px solid black; */
   cursor: pointer;
 }
 .pricing-table.table2 .price:hover > li{
@@ -222,7 +220,7 @@ li small {
 .pricing-table.table2 div:last-child {
   margin-right: 0;
 }
-.pricing-table.table2 .title-column h2 {
+.pricing-table.table2 .title-column .number {
   color: #ffffff;
   font-size: 24px;
   font-weight: 100;
@@ -350,6 +348,10 @@ li small {
   transition-timing-function: ease;
   transition-duration: 0.5s;
   border-radius: 50px 50px 0 0;
+}
+.pricing-table.table3 .price .subtitle .name{
+  font-size: 22px;
+  font-weight: 300;
 }
 .pricing-table.table3 .subtitle small{
   font-size: 14px;

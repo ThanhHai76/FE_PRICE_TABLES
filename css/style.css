@@ -113,13 +113,13 @@ body {
   line-height: 50px;
   margin: 110px auto 70px;
   text-transform: uppercase;
-}
-.slider-dark .title-slider{
   font-family: "Montserrat - Ultra Light";
-  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
 }
 .slider-dark .title-slider .title1{
   font-weight: 200;
+  margin-right: 30px;
 }
 .slider-dark .title-slider .title2 {
   font-weight: 600;
@@ -260,7 +260,7 @@ body {
 .container.title-light {
   margin: 140px auto;
 }
-.container.title-light h2 {
+.container.title-light .title {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
@@ -270,7 +270,7 @@ body {
 .container.title-light span {
   font-weight: bold;
 }
-.container.title-light p {
+.container.title-light .content {
   font-size: 16px;
   color: #5f727f;
   font-weight: 400;
@@ -291,14 +291,14 @@ body {
   position: relative;
   margin-top: 220px;
 }
-.slider h1 {
+.slider .title {
   font-size: 100px;
   font-weight: 300;
   letter-spacing: 10px;
   font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
   margin: 75px auto 100px;
 }
-.slider p {
+.slider .content {
   line-height: 37px;
   text-align: justify;
   font-size: 20px;
@@ -345,7 +345,7 @@ body {
   font-size: 14px;
   color: #99a9b5;
 }
-.widgets .columns h1 {
+.widgets .columns .title {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 700;
@@ -367,7 +367,7 @@ body {
 .widgets .columns .contact li {
   line-height: 25px;
 }
-.widgets h1 .fa.fa-caret-down {
+.widgets .title .fa.fa-caret-down {
   transform: rotate(45deg) translate(0px, 5px);
   color: #f50057;
 }
