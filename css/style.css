@@ -172,59 +172,67 @@ body {
   background-color: #00bcd4;
 }
 
+
 /* -----------animation slideshow------------ */
+
+/* -webkit-animation la mot phan mo rong CSS doc quyen 
+duoc ho tro boi cong cu trinh duyet Webkit (nhu Apple Safari, Google Chrome)
+Syntax: -webkit-animation: <name> <duration> <timing_function> <delay> <iteration_count> <direction> [, ... ]; */
+
 @-webkit-keyframes slideIn {
   100% {
     left: 0;
   }
 }
-
+/* 100% khi hoat canh hoan tat  */
 @keyframes slideIn {
   100% {
-    left: 0;
+    left: 0; 
   }
 }
+
+/* slide chuyen dong tu phai vao  (nextSlide)*/
 .slideInRight {
   left: -100%;
   -webkit-animation: slideIn 1s forwards;
-  animation: slideIn 1s forwards;
+  animation: slideIn 1s forwards; 
+  /* animation-fill-mode: forwards; phan tu se giu lai cac gia tri kieu duoc dat boi keyframe cuoi cung */
 }
 
+/* slide chuyen dong tu trai vao (prevSlide) */
 .slideInLeft {
   left: 100%;
   -webkit-animation: slideIn 1s forwards;
   animation: slideIn 1s forwards;
 }
 
+/* slide chuyen dong ra ben trai (nextSlide) */
 @-webkit-keyframes slideOutLeft {
   100% {
     left: -100%;
   }
 }
-
 @keyframes slideOutLeft {
   100% {
     left: -100%;
   }
 }
-
 .slideOutLeft {
   -webkit-animation: slideOutLeft 1s forwards;
   animation: slideOutLeft 1s forwards;
 }
 
+/* slide chuyen dong ra ben phai (prevSlide) */
 @-webkit-keyframes slideOutRight {
   100% {
     left: 100%;
   }
 }
-
 @keyframes slideOutRight {
   100% {
     left: 100%;
   }
 }
-
 .slideOutRight {
   -webkit-animation: slideOutRight 1s forwards;
   animation: slideOutRight 1s forwards;
