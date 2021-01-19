@@ -100,7 +100,7 @@ body {
   position: absolute;
   color: #ffffff;
   text-align: center;
-  transition: 0.5s;
+  transition: 1s;
   left: 100%;
   width: 100%;
 }
@@ -166,7 +166,7 @@ body {
   border: 3px solid #ffffff;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: background-color 1s ease;
   color: #2c2e3d;
 }
 .currentSlide .dot.active,
@@ -472,13 +472,23 @@ textarea:hover {
 }
 
 /* --- Project --- */
+.project .slider-footer{
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  justify-content: center;
+}
+.widgets .columns .project .flex-container{
+  position: absolute;
+}
 .widgets .columns .flex-container {
   margin-top: 10px;
   display: grid;
-  justify-content: center;
   grid-template-columns: auto auto auto;
   grid-gap: 7px;
+  justify-content: center;
   background-color: #212331;
+  transition: 1s;
 }
 .widgets .columns .flex-container div {
   width: 80px;
@@ -495,6 +505,21 @@ textarea:hover {
 .project .flex-container > div:nth-child(3),
 .project .flex-container > div:nth-child(5) {
   background-color: #4b565d;
+}
+
+.round-footer {
+  position: relative;
+  padding-top: 10px;
+  text-align: center;
+  letter-spacing: 5px;
+  color: #394050;
+}
+.dot-footer{
+  transition: 1s;
+}
+.dot-footer.active,
+.dot-footer:hover {
+  color: #99a9b5;
 }
 
 /* -----Flickr Feed----- */
@@ -562,16 +587,6 @@ textarea:hover {
   color: #ffffff;
 }
 
-.round-footer {
-  position: relative;
-  padding-top: 10px;
-  text-align: center;
-  letter-spacing: 5px;
-  color: #394050;
-}
-.round-footer .active {
-  color: #99a9b5;
-}
 /* -----------------footer .meunu-socials----------- */
 .footer .menu-socials {
   max-width: 1920px;
@@ -587,17 +602,16 @@ textarea:hover {
   position: absolute;
   transform: translateY(-25px);
   right: 40px;
-  /* bottom: 60px; */
   height: 50px;
   width: 50px;
   padding-top: 15px;
   background-color: #161723;
   opacity: 0.7;
   text-align: center;
-}
-.menu-socials .scroll-up a {
+  cursor: pointer;
   color: #ffffff;
 }
+
 .menu-socials .copy-right {
   margin: 40px 0;
   font-size: 14px;

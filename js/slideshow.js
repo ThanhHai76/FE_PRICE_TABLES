@@ -1,143 +1,133 @@
-document.addEventListener( //Su kien DOMContentLoaded được chạy sau khi ket thuc phan tich cau truc cua HTML
-  "DOMContentLoaded", // khong can cho cho stylesheets, images va subframes load xong
-  function () {
+let slidersHeader = document.querySelectorAll(".slider-dark");
+let sliderHeaderClass = slidersHeader[0].className;
+let dotsHeader = document.querySelectorAll(".dot");
 
-    let sliders = document.querySelectorAll(".slider-dark");
-    let prevSlide = document.querySelector(".prev");
-    let nextSlide = document.querySelector(".next");
-    let dots = document.querySelectorAll(".dot");
-    let currentSlideIndex = 0;
-    sliders[currentSlideIndex].style.left = 0;
-    dots[currentSlideIndex].className += " active";
+let slidersFooter = document.querySelectorAll(".slider-footer .flex-container");
+let sliderFooterClass = slidersFooter[0].className;
+let dotsFooter = document.querySelectorAll(".dot-footer");
 
-    let stateAutoplay = true;
-    let show_interval = "";
-    let time = 4000;
-    let stateTab = true;
-    let hidden, visibilityChange;
-    //Khi chuyen sang tab khac thi khong autoplay nua
-    if (typeof document.hidden !== "undefined") {
-      hidden = "hidden";
-      visibilityChange = "visibilitychange"; // Duoc kich hoat khi noi dung tab duoc hien thi hoac an di
-    } else if (typeof document.msHidden !== "undefined") {
-      hidden = "msHidden";
-      visibilityChange = "msvisibilitychange"; //
-    } else if (typeof document.webkitHidden !== "undefined") {
-      hidden = "webkitHidden";
-      visibilityChange = "webkitvisibilitychange"; //
-    }
-    // Ham xu ly su kien visibilityChange cho document
-    function handleVisibilityChange() {
-      stateTab = document[hidden] ? false : true;
-      if (stateTab) {
-        run_setInterval();
-      } else {
-        run_clearInterval();
-      }
-    }
-    document.addEventListener(visibilityChange, handleVisibilityChange, false);
+let prevSlide = document.querySelector(".prev");
+let nextSlide = document.querySelector(".next");
 
+let stateAutoplay = true;
+let showInterval = "";
+let time = 4000;
+
+//slideshow header
+slideShowFunc(
+  slidersHeader,
+  sliderHeaderClass,
+  dotsHeader,
+  prevSlide,
+  nextSlide
+);
+//slideshow footer
+slideShowFunc(slidersFooter, sliderFooterClass, dotsFooter);
+
+function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide) {
+  let currentSlideIndex = 0;
+  //Show the first slide
+  sliders[currentSlideIndex].style.left = 0;
+  dots[currentSlideIndex].className += " active";
+
+  //Get click event for Header slideshow ----------------------
+  if (stateAutoplay && prevSlide && nextSlide) {
+    // runClearInterval();
     prevSlide.addEventListener("click", function () {
-      if (stateAutoplay) {
-        run_clearInterval();
-        showSlides(true, false);
-        run_setInterval();
-      }
+      showSlides(true, false, sliders, sliderClass, dots);
     });
     nextSlide.addEventListener("click", function () {
-      if (stateAutoplay) {
-        run_clearInterval();
-        showSlides(false, true);
-        run_setInterval();
-      }
+      showSlides(false, true, sliders, sliderClass, dots);
     });
-
-    function showSlides(arrowL, arrowR) {
-      let nextSlideIndex; // Tim slide truoc do
-      if (arrowL) {
-        if (currentSlideIndex === 0) {
-          // Neu slideIndex = 0 thi ve slide cuoi
-          nextSlideIndex = sliders.length - 1;
-        } else {
-          // Neu khong thi giam index di 1
-          nextSlideIndex = currentSlideIndex - 1;
-        }
-        // An slide hien tai, hien slide "currentSlideIndex"
-        sliders[nextSlideIndex].style.left = "-100%";
-        sliders[currentSlideIndex].style.left = 0;
-        // Them class de chuyen slide co animation
-        sliders[nextSlideIndex].setAttribute(
-          "class",
-          "slider-dark slideInLeft"
-        );
-        sliders[currentSlideIndex].setAttribute(
-          "class",
-          "slider-dark slideOutRight"
-        );
-      } else if (arrowR) {
-        if (currentSlideIndex === sliders.length - 1) {
-          nextSlideIndex = 0;
-        } else {
-          nextSlideIndex = currentSlideIndex + 1;
-        }
-        sliders[nextSlideIndex].style.left = "100%";
-        sliders[currentSlideIndex].style.left = 0;
-        sliders[nextSlideIndex].setAttribute(
-          "class",
-          "slider-dark slideInRight"
-        );
-        sliders[currentSlideIndex].setAttribute(
-          "class",
-          "slider-dark slideOutLeft"
-        );
+    // runSetInterval();
+  }
+  function showSlides(arrowL, arrowR, sliders, sliderClass, dots) {
+    let nextSlideIndex; // find slide
+    if (arrowL) {
+      //left arrow
+      if (currentSlideIndex === 0) {
+        // if slideIndex = 0 to last slide
+        nextSlideIndex = sliders.length - 1;
+      } else {
+        // if no, decrease index 1
+        nextSlideIndex = currentSlideIndex - 1;
       }
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", ""); // An cac dot con lai
+      // Hide current slide, show slide "currentSlideIndex"
+      sliders[nextSlideIndex].style.left = "-100%";
+      sliders[currentSlideIndex].style.left = 0;
+      // Add class to slide animation
+      sliders[nextSlideIndex].setAttribute(
+        "class",
+        `${sliderClass} slideInLeft`
+      );
+      sliders[currentSlideIndex].setAttribute(
+        "class",
+        `${sliderClass} slideOutRight`
+      );
+    } else if (arrowR) {
+      //right arrow
+      if (currentSlideIndex === sliders.length - 1) {
+        nextSlideIndex = 0;
+      } else {
+        nextSlideIndex = currentSlideIndex + 1;
       }
-      dots[nextSlideIndex].className += " active"; // Show dot current, them class active
-      // Cap nhat gia tri slide hien tai
-      currentSlideIndex = nextSlideIndex;
+      sliders[nextSlideIndex].style.left = "100%";
+      sliders[currentSlideIndex].style.left = 0;
+      sliders[nextSlideIndex].setAttribute(
+        "class",
+        `${sliderClass} slideInRight`
+      );
+      sliders[currentSlideIndex].setAttribute(
+        "class",
+        `${sliderClass} slideOutLeft`
+      );
     }
+    //Dots control
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", ""); // Hide the rest dots
+    }
+    dots[nextSlideIndex].className += " active"; // Show dot current, add class active
 
     dots.forEach((elem) => {
       elem.addEventListener("click", function () {
         if (stateAutoplay) {
-          run_clearInterval();
+          // runClearInterval();
           count = Number(elem.getAttribute("name"));
-          dot_showSlides(count);
-          run_setInterval();
+          dotShowSlides(count, sliders, sliderClass, dots);
+          // runSetInterval();
         }
       });
     });
+    // Update current slide index
+    currentSlideIndex = nextSlideIndex;
+  }
 
-    //Show slide khi nhan vao dot
-    function dot_showSlides(nextSlideIndex) {
-      if (currentSlideIndex == sliders.length && nextSlideIndex == 0) {
-        showSlides(false, true);
+  //Show slide when click dot
+  function dotShowSlides(nextSlideIndex, sliders, sliderClass, dots) {
+    if (currentSlideIndex === sliders.length - 1 && nextSlideIndex === 0) {
+      showSlides(false, true, sliders, sliderClass, dots);
+    }
+    if (currentSlideIndex === 0 && nextSlideIndex === sliders.length - 1) {
+      showSlides(true, false, sliders, sliderClass, dots);
+    }
+    if (currentSlideIndex < nextSlideIndex) {
+      for (let i = currentSlideIndex; i < nextSlideIndex; i++) {
+        showSlides(false, true, sliders, sliderClass, dots);
       }
-      if (currentSlideIndex == 0 && nextSlideIndex == sliders.length) {
-        showSlides(true, false);
-      }
-      if (currentSlideIndex < nextSlideIndex) {
-        for (let i = currentSlideIndex; i < nextSlideIndex; i++) {
-          showSlides(false, true);
-        }
-      } else {
-        for (let i = currentSlideIndex; i > nextSlideIndex; i--) {
-          showSlides(true, false);
-        }
+    } else {
+      for (let i = currentSlideIndex; i > nextSlideIndex; i--) {
+        showSlides(true, false, sliders, sliderClass, dots);
       }
     }
+  }
 
-    run_setInterval();
-    function run_setInterval() {
-      show_interval = setInterval(() => {
-        showSlides(false, true);
-      }, time);
-    }
-    function run_clearInterval() {
-      clearInterval(show_interval);
-    }
-  },
-  false
-);
+  runSetInterval();
+  function runSetInterval() {
+    showInterval = setInterval(() => {
+      showSlides(false, true, sliders, sliderClass, dots);
+    }, time);
+  }
+  function runClearInterval() {
+    clearInterval(showInterval);
+  }
+}
