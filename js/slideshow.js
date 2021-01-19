@@ -15,8 +15,7 @@ slideShowFunc(
   sliderHeaderClass,
   dotsHeader,
   prevSlide,
-  nextSlide,
-  // false
+  nextSlide
 );
 
 function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide, autoPlay = true) {
