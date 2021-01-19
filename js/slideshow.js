@@ -5,7 +5,7 @@ let dotsHeader = document.querySelectorAll(".dot");
 let prevSlide = document.querySelector(".prev");
 let nextSlide = document.querySelector(".next");
 
-let stateAutoplay = true;
+// let stateAutoplay = true;
 let showInterval = "";
 let time = 4000;
 
@@ -15,17 +15,18 @@ slideShowFunc(
   sliderHeaderClass,
   dotsHeader,
   prevSlide,
-  nextSlide
+  nextSlide,
+  // false
 );
 
-function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide) {
+function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide, autoPlay = true) {
   let currentSlideIndex = 0;
   // Show the first slide
   sliders[currentSlideIndex].style.left = 0;
   dots[currentSlideIndex].className += " active";
 
   // Get click event for Header slideshow ----------------------
-  if (stateAutoplay && prevSlide && nextSlide) {
+  if (prevSlide && nextSlide) {
     prevSlide.addEventListener("click", function () {
       showSlides(true, false, sliders, sliderClass, dots);
     });
@@ -79,18 +80,18 @@ function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide) {
       dots[i].className = dots[i].className.replace(" active", ""); // Hide the rest dots
     }
     dots[nextSlideIndex].className += " active"; // Show dot current, add class active
-
-    dots.forEach((elem) => {
-      elem.addEventListener("click", function () {
-        if (stateAutoplay) {
-          count = Number(elem.getAttribute("name"));
-          dotShowSlides(count, sliders, sliderClass, dots);
-        }
-      });
-    });
     // Update current slide index
     currentSlideIndex = nextSlideIndex;
   }
+
+  dots.forEach((elem) => {
+    elem.addEventListener("click", function () {
+        runClearInterval();
+        count = Number(elem.getAttribute("name"));
+        dotShowSlides(count, sliders, sliderClass, dots);
+        runSetInterval();
+    });
+  });
 
   // Show slide when click dot
   function dotShowSlides(nextSlideIndex, sliders, sliderClass, dots) {
@@ -111,7 +112,9 @@ function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide) {
     }
   }
 
-  runSetInterval();
+  if(autoPlay){
+    runSetInterval();
+  } 
   function runSetInterval() {
     showInterval = setInterval(() => {
       showSlides(false, true, sliders, sliderClass, dots);
