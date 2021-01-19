@@ -2,10 +2,6 @@ let slidersHeader = document.querySelectorAll(".slider-dark");
 let sliderHeaderClass = slidersHeader[0].className;
 let dotsHeader = document.querySelectorAll(".dot");
 
-let slidersFooter = document.querySelectorAll(".slider-footer .flex-container");
-let sliderFooterClass = slidersFooter[0].className;
-let dotsFooter = document.querySelectorAll(".dot-footer");
-
 let prevSlide = document.querySelector(".prev");
 let nextSlide = document.querySelector(".next");
 
@@ -13,7 +9,7 @@ let stateAutoplay = true;
 let showInterval = "";
 let time = 4000;
 
-//slideshow header
+// Slideshow header
 slideShowFunc(
   slidersHeader,
   sliderHeaderClass,
@@ -21,35 +17,31 @@ slideShowFunc(
   prevSlide,
   nextSlide
 );
-//slideshow footer
-slideShowFunc(slidersFooter, sliderFooterClass, dotsFooter);
 
 function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide) {
   let currentSlideIndex = 0;
-  //Show the first slide
+  // Show the first slide
   sliders[currentSlideIndex].style.left = 0;
   dots[currentSlideIndex].className += " active";
 
-  //Get click event for Header slideshow ----------------------
+  // Get click event for Header slideshow ----------------------
   if (stateAutoplay && prevSlide && nextSlide) {
-    // runClearInterval();
     prevSlide.addEventListener("click", function () {
       showSlides(true, false, sliders, sliderClass, dots);
     });
     nextSlide.addEventListener("click", function () {
       showSlides(false, true, sliders, sliderClass, dots);
     });
-    // runSetInterval();
   }
   function showSlides(arrowL, arrowR, sliders, sliderClass, dots) {
-    let nextSlideIndex; // find slide
+    let nextSlideIndex; // Find slide
     if (arrowL) {
-      //left arrow
+      // Left arrow
       if (currentSlideIndex === 0) {
-        // if slideIndex = 0 to last slide
+        // If slideIndex = 0 to last slide
         nextSlideIndex = sliders.length - 1;
       } else {
-        // if no, decrease index 1
+        // If no, decrease index 1
         nextSlideIndex = currentSlideIndex - 1;
       }
       // Hide current slide, show slide "currentSlideIndex"
@@ -65,7 +57,7 @@ function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide) {
         `${sliderClass} slideOutRight`
       );
     } else if (arrowR) {
-      //right arrow
+      // Right arrow
       if (currentSlideIndex === sliders.length - 1) {
         nextSlideIndex = 0;
       } else {
@@ -82,7 +74,7 @@ function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide) {
         `${sliderClass} slideOutLeft`
       );
     }
-    //Dots control
+    // Dots control
     for (let i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", ""); // Hide the rest dots
     }
@@ -91,10 +83,8 @@ function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide) {
     dots.forEach((elem) => {
       elem.addEventListener("click", function () {
         if (stateAutoplay) {
-          // runClearInterval();
           count = Number(elem.getAttribute("name"));
           dotShowSlides(count, sliders, sliderClass, dots);
-          // runSetInterval();
         }
       });
     });
@@ -102,7 +92,7 @@ function slideShowFunc(sliders, sliderClass, dots, prevSlide, nextSlide) {
     currentSlideIndex = nextSlideIndex;
   }
 
-  //Show slide when click dot
+  // Show slide when click dot
   function dotShowSlides(nextSlideIndex, sliders, sliderClass, dots) {
     if (currentSlideIndex === sliders.length - 1 && nextSlideIndex === 0) {
       showSlides(false, true, sliders, sliderClass, dots);
