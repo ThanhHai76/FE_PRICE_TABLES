@@ -284,6 +284,9 @@
   .widgets .columns .project {
     padding-bottom: 70px;
   }
+  .widgets .columns .project .flex-container{
+    width: 100%;
+  }
 
   .menu-socials .scroll-up {
     position: fixed;

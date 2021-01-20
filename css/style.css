@@ -251,14 +251,14 @@ Syntax: -webkit-animation: <name> <duration> <timing_function> <delay> <iteratio
 .fa-arrow-left {
   float: left;
   background-color: #212331;
-  padding: 20px;
+  padding: 20px 30px;
   width: 80px;
   transform: translateX(0px) translateY(-500px);
 }
 .fa-arrow-right {
   float: right;
   background-color: #212331;
-  padding: 20px;
+  padding: 20px 30px;
   width: 80px;
   transform: translateX(0px) translateY(-500px);
 }
@@ -471,18 +471,17 @@ textarea:hover {
   letter-spacing: 1px;
 }
 
-/* --- Project --- */
+/* ------ Project ------ */
 .project .slider-footer{
   position: relative;
   overflow: hidden;
-  /* height: 180px; */
+  height: 180px;
   justify-content: center;
 }
 .widgets .columns .project .flex-container{
-  /* position: absolute; */
+  position: absolute;
 }
 .widgets .columns .flex-container {
-  /* margin-top: 10px; */
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 7px;
@@ -508,8 +507,8 @@ textarea:hover {
 }
 
 .round-footer {
+  /* margin-top: 10px; */
   position: relative;
-  padding-top: 10px;
   text-align: center;
   letter-spacing: 5px;
   color: #394050;
