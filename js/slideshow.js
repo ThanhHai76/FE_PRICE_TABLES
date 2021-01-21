@@ -1,9 +1,14 @@
-let slidersHeader = document.querySelectorAll(".slider-dark");
-let sliderHeaderClass = slidersHeader[0].className;
-let dotsHeader = document.querySelectorAll(".dot");
+let slidersHeader = document.querySelectorAll(".slider-dark")
+let sliderHeaderClass = slidersHeader[0].className
+let dotsHeader = document.querySelectorAll(".dot")
 
-let prevSlide = document.querySelector(".prev");
-let nextSlide = document.querySelector(".next");
+let prevSlide = document.querySelector(".prev")
+let nextSlide = document.querySelector(".next")
+
+const NAV_ARROW = {
+  LEFT: "left",
+  RIGHT: "right",
+}
 
 // Slideshow header
 slideShowFunc(
@@ -12,7 +17,7 @@ slideShowFunc(
   dotsHeader,
   prevSlide,
   nextSlide
-);
+)
 
 function slideShowFunc(
   sliders,
@@ -22,174 +27,169 @@ function slideShowFunc(
   nextSlide,
   autoPlay = { delay: 4000, autoplay: true }
 ) {
-  let currentSlideIndex = 0;
-  let nextSlideIndex;
+  let currentSlideIndex = 0
+  let nextSlideIndex
+  let showInterval = ""
   // Show the first slide
-  sliders[currentSlideIndex].style.left = 0;
-  dots[currentSlideIndex].className += " active";
+  sliders[currentSlideIndex].style.left = 0
+  dots[currentSlideIndex].className += " active"
 
   // Get click event for Header slideshow ----------------------
   if (prevSlide && nextSlide) {
     prevSlide.addEventListener("click", function () {
       nextSlideIndex = getNextSlideIndex(
-        true,
-        false,
+        NAV_ARROW.LEFT,
         sliders,
         currentSlideIndex
-      );
+      )
       showSlides(
-        true,
-        false,
+        NAV_ARROW.LEFT,
         sliders,
         sliderClass,
         dots,
         currentSlideIndex,
         nextSlideIndex
-      );
-      currentSlideIndex = nextSlideIndex;
-    });
+      )
+      currentSlideIndex = nextSlideIndex
+    })
     nextSlide.addEventListener("click", function () {
       nextSlideIndex = getNextSlideIndex(
-        false,
-        true,
+        NAV_ARROW.RIGHT,
         sliders,
         currentSlideIndex
-      );
+      )
       showSlides(
-        false,
-        true,
+        NAV_ARROW.RIGHT,
         sliders,
         sliderClass,
         dots,
         currentSlideIndex,
         nextSlideIndex
-      );
-      currentSlideIndex = nextSlideIndex;
-    });
+      )
+      currentSlideIndex = nextSlideIndex
+    })
   }
 
-  dots.forEach((elem) => {
-    elem.addEventListener("click", function () {
-      dotIndex = Number(elem.getAttribute("name"));
-      if (currentSlideIndex === sliders.length - 1 && dotIndex === 0) {
+  dots.forEach((element) => {
+    element.addEventListener("click", function () {
+      clearInterval(showInterval)
+      dotIndex = Number(element.getAttribute("name"))
+      if (
+        (currentSlideIndex === sliders.length - 1 && dotIndex === 0) ||
+        currentSlideIndex < dotIndex
+      ) {
         showSlides(
-          false,
-          true,
+          NAV_ARROW.RIGHT,
           sliders,
           sliderClass,
           dots,
           currentSlideIndex,
           dotIndex
-        );
-      } else if (currentSlideIndex === 0 && dotIndex === sliders.length - 1) {
+        )
+      } else if (
+        (currentSlideIndex === 0 && dotIndex === sliders.length - 1) ||
+        currentSlideIndex > dotIndex
+      ) {
         showSlides(
-          true,
-          false,
+          NAV_ARROW.LEFT,
           sliders,
           sliderClass,
           dots,
           currentSlideIndex,
           dotIndex
-        );
-      } else if (currentSlideIndex < dotIndex) {
-        showSlides(
-          false,
-          true,
-          sliders,
-          sliderClass,
-          dots,
-          currentSlideIndex,
-          dotIndex
-        );
-      } else {
-        showSlides(
-          true,
-          false,
-          sliders,
-          sliderClass,
-          dots,
-          currentSlideIndex,
-          dotIndex
-        );
+        )
       }
-      currentSlideIndex = dotIndex;
-    });
-  });
+      showInterval = setInterval(() => {
+        nextSlideIndex = getNextSlideIndex(
+          NAV_ARROW.RIGHT,
+          sliders,
+          currentSlideIndex
+        )
+        showSlides(
+          NAV_ARROW.RIGHT,
+          sliders,
+          sliderClass,
+          dots,
+          currentSlideIndex,
+          nextSlideIndex
+        )
+        currentSlideIndex = nextSlideIndex
+      }, autoPlay.delay)
+      currentSlideIndex = dotIndex
+    })
+  })
 
   if (autoPlay.autoplay) {
-    setInterval(() => {
+    showInterval = setInterval(() => {
       nextSlideIndex = getNextSlideIndex(
-        false,
-        true,
+        NAV_ARROW.RIGHT,
         sliders,
         currentSlideIndex
-      );
+      )
       showSlides(
-        false,
-        true,
+        NAV_ARROW.RIGHT,
         sliders,
         sliderClass,
         dots,
         currentSlideIndex,
         nextSlideIndex
-      );
-      currentSlideIndex = nextSlideIndex;
-    }, autoPlay.delay);
+      )
+      currentSlideIndex = nextSlideIndex
+    }, autoPlay.delay)
   }
 }
 
-function getNextSlideIndex(arrowL, arrowR, sliders, currentSlideIndex) {
-  let nextSlideIndex;
-  if (arrowL) {
+function getNextSlideIndex(navArrow, sliders, currentSlideIndex) {
+  let nextSlideIndex
+  if (navArrow === NAV_ARROW.LEFT) {
     if (currentSlideIndex === 0) {
-      nextSlideIndex = sliders.length - 1;
+      nextSlideIndex = sliders.length - 1
     } else {
-      nextSlideIndex = currentSlideIndex - 1;
+      nextSlideIndex = currentSlideIndex - 1
     }
-  } else if (arrowR) {
+  } else if (navArrow === NAV_ARROW.RIGHT) {
     if (currentSlideIndex === sliders.length - 1) {
-      nextSlideIndex = 0;
+      nextSlideIndex = 0
     } else {
-      nextSlideIndex = currentSlideIndex + 1;
+      nextSlideIndex = currentSlideIndex + 1
     }
   }
-  return nextSlideIndex;
+  return nextSlideIndex
 }
 
 function showSlides(
-  arrowL,
-  arrowR,
+  navArrow,
   sliders,
   sliderClass,
   dots,
   currentSlideIndex,
   nextSlideIndex
 ) {
-  if (arrowL) {
+  if (navArrow === NAV_ARROW.LEFT) {
     // Hide current slide, show slide "currentSlideIndex"
-    sliders[nextSlideIndex].style.left = "-100%";
-    sliders[currentSlideIndex].style.left = 0;
+    sliders[nextSlideIndex].style.left = "-100%"
+    sliders[currentSlideIndex].style.left = 0
     // Add class to slide animation
-    sliders[nextSlideIndex].setAttribute("class", `${sliderClass} slideInLeft`);
+    sliders[nextSlideIndex].setAttribute("class", `${sliderClass} slideInLeft`)
     sliders[currentSlideIndex].setAttribute(
       "class",
       `${sliderClass} slideOutRight`
-    );
-  } else if (arrowR) {
-    sliders[nextSlideIndex].style.left = "100%";
-    sliders[currentSlideIndex].style.left = 0;
+    )
+  } else if (navArrow === NAV_ARROW.RIGHT) {
+    sliders[nextSlideIndex].style.left = "100%"
+    sliders[currentSlideIndex].style.left = 0
     sliders[nextSlideIndex].setAttribute(
       "class",
       `${sliderClass} slideInRight`
-    );
+    )
     sliders[currentSlideIndex].setAttribute(
       "class",
       `${sliderClass} slideOutLeft`
-    );
+    )
   }
 
   for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", ""); // Hide the rest dots
+    dots[i].className = dots[i].className.replace(" active", "") // Hide the rest dots
   }
-  dots[nextSlideIndex].className += " active"; // Show dot current, add class active
+  dots[nextSlideIndex].className += " active" // Show dot current, add class active
 }
