@@ -1,25 +1,32 @@
-let slidersHeader = document.querySelectorAll(".slider-dark");
-let sliderHeaderClass = slidersHeader[0].className;
-let dotsHeader = document.querySelectorAll(".dot");
+const slidersHeader = document.querySelectorAll(".slider-dark")
+const sliderHeaderClass = slidersHeader[0].className
+const dotsHeader = document.querySelectorAll(".dot")
 
-let prevSlide = document.querySelector(".prev");
-let nextSlide = document.querySelector(".next");
+const slidersFooter = document.querySelectorAll(".slider-footer .flex-container")
+const sliderFooterClass = slidersFooter[0].className
+const dotsFooter = document.querySelectorAll(".dot-footer")
+
+const prevSlide = document.querySelector(".prev")
+const nextSlide = document.querySelector(".next")
 
 const NAV_ARROW = {
   LEFT: "left",
   RIGHT: "right",
-};
+}
 
 // Slideshow header
-slideShowFunc(
+runSlideShow(
   slidersHeader,
   sliderHeaderClass,
   dotsHeader,
   prevSlide,
   nextSlide
-);
+)
 
-function slideShowFunc(
+// Slideshow footer
+runSlideShow(slidersFooter, sliderFooterClass, dotsFooter)
+
+function runSlideShow(
   sliders,
   sliderClass,
   dots,
@@ -27,56 +34,56 @@ function slideShowFunc(
   nextSlide,
   autoPlay = { delay: 4000, autoplay: true }
 ) {
-  let currentSlideIndex = 0;
-  let nextSlideIndex;
-  let showInterval = "";
+  let currentSlideIndex = 0
+  let nextSlideIndex
+  let showInterval = null
   // Show the first slide
-  sliders[currentSlideIndex].style.left = 0;
-  dots[currentSlideIndex].className += " active";
+  sliders[currentSlideIndex].style.left = 0
+  dots[currentSlideIndex].classList.add("active")
 
   // Get click event for Header slideshow ----------------------
   if (prevSlide && nextSlide) {
     prevSlide.addEventListener("click", function () {
-      navFunc(NAV_ARROW.LEFT);
-    });
+      navigateSlide(NAV_ARROW.LEFT)
+    })
     nextSlide.addEventListener("click", function () {
-      navFunc(NAV_ARROW.RIGHT);
-    });
+      navigateSlide(NAV_ARROW.RIGHT)
+    })
   }
 
-  let navFunc = (navArrow, interval = true) => {
-    if (interval) runClearInterval();
-    nextSlideIndex = getNextSlideIndex(navArrow, sliders, currentSlideIndex);
-    showSlidesFunc(navArrow);
-    if (interval) runSetInterval();
-    currentSlideIndex = nextSlideIndex;
-  };
+  const navigateSlide = (navArrow, interval = true) => {
+    if (interval) runClearInterval()
+    nextSlideIndex = getNextSlideIndex(navArrow, sliders, currentSlideIndex)
+    controlShowSlides(navArrow)
+    if (interval) runSetInterval()
+    currentSlideIndex = nextSlideIndex
+  }
 
   dots.forEach((element) => {
     element.addEventListener("click", function () {
-      runClearInterval();
-      let dotIndex = Number(element.getAttribute("name"));
-      dotShowSlide(dotIndex);
-      runSetInterval();
-      currentSlideIndex = dotIndex;
-    });
-  });
+      runClearInterval()
+      const dotIndex = Number(element.getAttribute("name"))
+      clickDotShowSlide(dotIndex)
+      runSetInterval()
+      currentSlideIndex = dotIndex
+    })
+  })
 
-  let dotShowSlide = (dotIndex) => {
+  const clickDotShowSlide = (dotIndex) => {
     if (
       (currentSlideIndex === sliders.length - 1 && dotIndex === 0) ||
       currentSlideIndex < dotIndex
     ) {
-      showSlidesFunc(NAV_ARROW.RIGHT, dotIndex);
+      controlShowSlides(NAV_ARROW.RIGHT, dotIndex)
     } else if (
       (currentSlideIndex === 0 && dotIndex === sliders.length - 1) ||
       currentSlideIndex > dotIndex
     ) {
-      showSlidesFunc(NAV_ARROW.LEFT, dotIndex);
+      controlShowSlides(NAV_ARROW.LEFT, dotIndex)
     }
-  };
+  }
 
-  let showSlidesFunc = (navArrow, nextIndex = nextSlideIndex) => {
+  const controlShowSlides = (navArrow, nextIndex = nextSlideIndex) => {
     showSlides(
       navArrow,
       sliders,
@@ -84,40 +91,40 @@ function slideShowFunc(
       dots,
       currentSlideIndex,
       nextIndex
-    );
-  };
-
-  let runSetInterval = () => {
-    showInterval = setInterval(() => {
-      navFunc(NAV_ARROW.RIGHT, false);
-    }, autoPlay.delay);
-  };
-
-  if (autoPlay.autoplay) {
-    runSetInterval();
+    )
   }
 
-  let runClearInterval = () => {
-    clearInterval(showInterval);
-  };
+  const runSetInterval = () => {
+    showInterval = setInterval(() => {
+      navigateSlide(NAV_ARROW.RIGHT, false)
+    }, autoPlay.delay)
+  }
+
+  if (autoPlay.autoplay) {
+    runSetInterval()
+  }
+
+  const runClearInterval = () => {
+    clearInterval(showInterval)
+  }
 }
 
 function getNextSlideIndex(navArrow, sliders, currentSlideIndex) {
-  let nextSlideIndex;
+  let nextSlideIndex
   if (navArrow === NAV_ARROW.LEFT) {
     if (currentSlideIndex === 0) {
-      nextSlideIndex = sliders.length - 1;
+      nextSlideIndex = sliders.length - 1
     } else {
-      nextSlideIndex = currentSlideIndex - 1;
+      nextSlideIndex = currentSlideIndex - 1
     }
   } else if (navArrow === NAV_ARROW.RIGHT) {
     if (currentSlideIndex === sliders.length - 1) {
-      nextSlideIndex = 0;
+      nextSlideIndex = 0
     } else {
-      nextSlideIndex = currentSlideIndex + 1;
+      nextSlideIndex = currentSlideIndex + 1
     }
   }
-  return nextSlideIndex;
+  return nextSlideIndex
 }
 
 function showSlides(
@@ -130,29 +137,29 @@ function showSlides(
 ) {
   if (navArrow === NAV_ARROW.LEFT) {
     // Hide current slide, show slide "currentSlideIndex"
-    sliders[nextSlideIndex].style.left = "-100%";
-    sliders[currentSlideIndex].style.left = 0;
+    sliders[nextSlideIndex].style.left = "-100%"
+    sliders[currentSlideIndex].style.left = 0
     // Add class to slide animation
-    sliders[nextSlideIndex].setAttribute("class", `${sliderClass} slideInLeft`);
+    sliders[nextSlideIndex].setAttribute("class", `${sliderClass} slideInLeft`)
     sliders[currentSlideIndex].setAttribute(
       "class",
       `${sliderClass} slideOutRight`
-    );
+    )
   } else if (navArrow === NAV_ARROW.RIGHT) {
-    sliders[nextSlideIndex].style.left = "100%";
-    sliders[currentSlideIndex].style.left = 0;
+    sliders[nextSlideIndex].style.left = "100%"
+    sliders[currentSlideIndex].style.left = 0
     sliders[nextSlideIndex].setAttribute(
       "class",
       `${sliderClass} slideInRight`
-    );
+    )
     sliders[currentSlideIndex].setAttribute(
       "class",
       `${sliderClass} slideOutLeft`
-    );
+    )
   }
 
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", ""); // Hide the rest dots
+  for (let i = 0 ; i < dots.length ; i++) {
+    dots[i].classList.remove("active") // Hide the rest dots
   }
-  dots[nextSlideIndex].className += " active"; // Show dot current, add class active
+  dots[nextSlideIndex].classList.add("active") // Show dot current, add class active
 }
