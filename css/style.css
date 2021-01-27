@@ -18,6 +18,9 @@ body {
 .header {
   background-color: #2c2e3d;
 }
+.header .container{
+  overflow: hidden;
+}
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -32,11 +35,11 @@ body {
 .container.main-menu .logo {
   font-family: Montserrat;
 }
-.container.main-menu .logo img {
+.container.main-menu .logo .image {
   vertical-align: middle;
   transform: translateY(-7px);
 }
-.container.main-menu .logo span {
+.container.main-menu .logo .name {
   font-size: 24px;
   font-weight: 700;
   color: #ffffff;
@@ -63,7 +66,7 @@ body {
   line-height: 30px;
   margin: 0 20px;
 }
-.container .nav-right-header li:last-child{
+.container .nav-right-header li:last-child {
   margin-right: 0;
 }
 
@@ -74,7 +77,7 @@ body {
 .main-menu .nav-header .active {
   border: 2px solid #ffffff;
 }
-.main-menu .nav-header .active a{
+.main-menu .nav-header .active a {
   font-weight: 700;
   color: #ffffff;
 }
@@ -86,31 +89,42 @@ body {
 }
 
 /* ----------------slider-dark---------------- */
+.slideshow {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 800px;
+  color: #2c2e3d;
+}
 .slider-dark {
+  position: absolute;
   color: #ffffff;
   text-align: center;
-  padding: 60px 0;
+  transition: 1s;
+  left: 100%;
+  width: 100%;
 }
-.slider-dark img{
+.slider-dark .image {
   position: relative;
   margin-top: 170px;
 }
-.slider-dark .title-slider{
+.slider-dark .title-slider {
   font-size: 80px;
   line-height: 50px;
   margin: 110px auto 70px;
   text-transform: uppercase;
-}
-.slider-dark .title-slider h1 {
   font-family: "Montserrat - Ultra Light";
+  display: flex;
+  justify-content: center;
+}
+.slider-dark .title-slider .title1{
+  font-weight: 200;
+  margin-right: 30px;
+}
+.slider-dark .title-slider .title2 {
   font-weight: 600;
 }
-.slider-dark .title-slider span {
-  text-transform: uppercase;
-  font-weight: 200;
-}
-.slider-dark p {
-  line-height: 25px;
+.slider-dark .content {
   color: #ffffff;
   font-family: "Source Sans Pro";
   font-size: 24px;
@@ -118,7 +132,7 @@ body {
   line-height: 37px;
 }
 .slider-dark .buttons {
-  margin: 80px 0 150px;
+  margin: 80px 0 0;
   justify-content: center;
 }
 .slider-dark .btn {
@@ -127,6 +141,7 @@ body {
   font-weight: 500;
   padding: 10px 20px;
   cursor: pointer;
+  text-transform: uppercase;
 }
 .slider-dark .purchase {
   color: #ffffff;
@@ -139,17 +154,93 @@ body {
   border: 2px solid #00bcd4;
   background-color: #2c2e3d;
 }
-.slider-dark .round li {
-  position: relative;
-  display: inline;
-  color: #ffffff;
-  margin: 23px;
+.currentSlide {
+  text-align: center;
+  margin: 100px 0 50px;
+  color: #2c2e3d;
 }
-.slider-dark .round-pager .fa-circle {
-  color: #00bcd4;
-  border: 1px solid #ffffff;
+.currentSlide .dot {
+  cursor: pointer;
+  padding: 7px;
+  margin: 0 10px;
+  border: 3px solid #ffffff;
   border-radius: 50%;
+  display: inline-block;
+  transition: background-color 1s ease;
+  color: #2c2e3d;
 }
+.currentSlide .dot.active,
+.currentSlide .dot:hover {
+  background-color: #00bcd4;
+  color: #00bcd4;
+}
+
+
+/* -----------animation slideshow------------ */
+
+/* -webkit-animation la mot phan mo rong CSS doc quyen 
+duoc ho tro boi cong cu trinh duyet Webkit (nhu Apple Safari, Google Chrome)
+Syntax: -webkit-animation: <name> <duration> <timing_function> <delay> <iteration_count> <direction> [, ... ]; */
+
+@-webkit-keyframes slideIn {
+  100% {
+    left: 0;
+  }
+}
+/* 100% khi hoat canh hoan tat  */
+@keyframes slideIn {
+  100% {
+    left: 0; 
+  }
+}
+
+/* slide chuyen dong tu phai vao  (nextSlide)*/
+.slideInRight {
+  left: -100%;
+  -webkit-animation: slideIn 1s forwards;
+  animation: slideIn 1s forwards; 
+  /* animation-fill-mode: forwards; phan tu se giu lai cac gia tri kieu duoc dat boi keyframe cuoi cung */
+}
+
+/* slide chuyen dong tu trai vao (prevSlide) */
+.slideInLeft {
+  left: 100%;
+  -webkit-animation: slideIn 1s forwards;
+  animation: slideIn 1s forwards;
+}
+
+/* slide chuyen dong ra ben trai (nextSlide) */
+@-webkit-keyframes slideOutLeft {
+  100% {
+    left: -100%;
+  }
+}
+@keyframes slideOutLeft {
+  100% {
+    left: -100%;
+  }
+}
+.slideOutLeft {
+  -webkit-animation: slideOutLeft 1s forwards;
+  animation: slideOutLeft 1s forwards;
+}
+
+/* slide chuyen dong ra ben phai (prevSlide) */
+@-webkit-keyframes slideOutRight {
+  100% {
+    left: 100%;
+  }
+}
+@keyframes slideOutRight {
+  100% {
+    left: 100%;
+  }
+}
+.slideOutRight {
+  -webkit-animation: slideOutRight 1s forwards;
+  animation: slideOutRight 1s forwards;
+}
+
 
 /* ---------arrow---------- */
 .arrow .fa {
@@ -160,14 +251,14 @@ body {
 .fa-arrow-left {
   float: left;
   background-color: #212331;
-  padding: 20px;
+  padding: 20px 30px;
   width: 80px;
   transform: translateX(0px) translateY(-500px);
 }
 .fa-arrow-right {
   float: right;
   background-color: #212331;
-  padding: 20px;
+  padding: 20px 30px;
   width: 80px;
   transform: translateX(0px) translateY(-500px);
 }
@@ -180,7 +271,7 @@ body {
 .container.title-light {
   margin: 140px auto;
 }
-.container.title-light h2 {
+.container.title-light .title {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
@@ -190,7 +281,7 @@ body {
 .container.title-light span {
   font-weight: bold;
 }
-.container.title-light p {
+.container.title-light .content {
   font-size: 16px;
   color: #5f727f;
   font-weight: 400;
@@ -207,18 +298,18 @@ body {
   text-align: center;
   color: #ffffff;
 }
-.slider img{
+.slider img {
   position: relative;
   margin-top: 220px;
 }
-.slider h1 {
+.slider .title {
   font-size: 100px;
   font-weight: 300;
   letter-spacing: 10px;
   font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
   margin: 75px auto 100px;
 }
-.slider p {
+.slider .content {
   line-height: 37px;
   text-align: justify;
   font-size: 20px;
@@ -255,7 +346,7 @@ body {
   position: relative;
   color: #ffffff;
 }
-.widgets .columns .mg-bt{
+.widgets .columns .mg-bt {
   margin-bottom: 70px;
 }
 .widgets .columns .title-column p {
@@ -265,7 +356,7 @@ body {
   font-size: 14px;
   color: #99a9b5;
 }
-.widgets .columns h1 {
+.widgets .columns .title {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 700;
@@ -287,7 +378,7 @@ body {
 .widgets .columns .contact li {
   line-height: 25px;
 }
-.widgets h1 .fa.fa-caret-down {
+.widgets .title .fa.fa-caret-down {
   transform: rotate(45deg) translate(0px, 5px);
   color: #f50057;
 }
@@ -321,7 +412,7 @@ body {
   float: right;
 }
 
-.widgets .columns .useful-link .links{
+.widgets .columns .useful-link .links {
   color: #99a9b5;
   list-style-type: disc;
   margin: auto;
@@ -331,7 +422,7 @@ body {
   font-size: 16px;
   line-height: 35px;
 }
-.widgets .columns .useful-link .links li:hover{
+.widgets .columns .useful-link .links li:hover {
   color: #04a8be;
 }
 .widgets .useful-link .links li:last-child {
@@ -370,7 +461,7 @@ textarea:hover {
 .widgets .email button {
   background-color: #394050;
   color: #99a9b5;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
@@ -380,50 +471,74 @@ textarea:hover {
   letter-spacing: 1px;
 }
 
-/* --- Project --- */
-.widgets .columns .flex-container {
-  margin-top: 10px;
-  display: grid;
+/* ------ Project ------ */
+.project .slider-footer{
+  position: relative;
+  overflow: hidden;
+  height: 180px;
   justify-content: center;
+}
+.widgets .columns .project .flex-container{
+  position: absolute;
+}
+.widgets .columns .flex-container {
+  display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 7px;
+  justify-content: center;
   background-color: #212331;
+  transition: 1s;
 }
 .widgets .columns .flex-container div {
   width: 80px;
   height: 80px;
 }
 .project .flex-container > div:nth-child(1),
-.project .flex-container > div:nth-child(6){
+.project .flex-container > div:nth-child(6) {
   background-color: #828e97;
 }
 .project .flex-container > div:nth-child(2),
-.project .flex-container > div:nth-child(4){
+.project .flex-container > div:nth-child(4) {
   background-color: #5c6973;
 }
 .project .flex-container > div:nth-child(3),
-.project .flex-container > div:nth-child(5){
+.project .flex-container > div:nth-child(5) {
   background-color: #4b565d;
+}
+
+.round-footer {
+  /* margin-top: 10px; */
+  position: relative;
+  text-align: center;
+  letter-spacing: 5px;
+  color: #394050;
+}
+.dot-footer{
+  transition: 1s;
+}
+.dot-footer.active,
+.dot-footer:hover {
+  color: #99a9b5;
 }
 
 /* -----Flickr Feed----- */
 .flex-container > div:nth-child(1),
-.flex-container > div:nth-child(6){
+.flex-container > div:nth-child(6) {
   background-color: #b6c6c9;
 }
 .flex-container > div:nth-child(2),
 .flex-container > div:nth-child(4),
-.flex-container > div:nth-child(9){
+.flex-container > div:nth-child(9) {
   background-color: #828e97;
 }
 .flex-container > div:nth-child(3),
-.flex-container > div:nth-child(8){
+.flex-container > div:nth-child(8) {
   background-color: #bcbcbc;
 }
-.flex-container > div:nth-child(5){
+.flex-container > div:nth-child(5) {
   background-color: #5f727f;
 }
-.flex-container > div:nth-child(7){
+.flex-container > div:nth-child(7) {
   background-color: #dfe5e8;
 }
 
@@ -431,7 +546,7 @@ textarea:hover {
 .widgets .columns .newsletter {
   text-align: left;
 }
-.widgets .columns .newsletter p{
+.widgets .columns .newsletter p {
   color: #798592;
   font-size: 16px;
   font-family: "Source Sans Pro";
@@ -471,16 +586,6 @@ textarea:hover {
   color: #ffffff;
 }
 
-.round-footer{
-  position: relative;
-  padding-top: 10px;
-  text-align: center;
-  letter-spacing: 5px;
-  color: #394050;
-}
-.round-footer .active{
-  color: #99a9b5;
-}
 /* -----------------footer .meunu-socials----------- */
 .footer .menu-socials {
   max-width: 1920px;
@@ -492,21 +597,20 @@ textarea:hover {
   text-align: center;
   font-size: 14px;
 }
-.menu-socials .scroll-up{
+.menu-socials .scroll-up {
   position: absolute;
   transform: translateY(-25px);
   right: 40px;
-  /* bottom: 60px; */
   height: 50px;
   width: 50px;
   padding-top: 15px;
   background-color: #161723;
   opacity: 0.7;
   text-align: center;
-}
-.menu-socials .scroll-up a{
+  cursor: pointer;
   color: #ffffff;
 }
+
 .menu-socials .copy-right {
   margin: 40px 0;
   font-size: 14px;

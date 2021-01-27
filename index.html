@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Tables</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/pricing-style-1.css">
     <link rel="stylesheet" href="css/pricing-style-2.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <script type="text/javascript" src="js/responsive.js"></script>
 </head>
 
 <body>
@@ -21,11 +20,11 @@
         <div class="container main-menu">
             <div class="logo">
                 <a href="index.html">
-                    <img src="./images/Logo.png" alt="">
-                    <span>THEGEM</span>
+                    <img class="image" src="./images/Logo.png" alt="">
+                    <span class="name">THEGEM</span>
                 </a>
             </div>
-            <div class="top-nav" id="top-nav-header">
+            <div class="top-nav">
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -47,42 +46,88 @@
                             </a></li>
                     </ul>
                 </div>
-
             </div>
-
         </div>
         <div class="container">
-            <div class="slider-dark">
-                <img src="./images/icon-slider.png" alt="" class="icon-slider">
-                <div class="title-slider">
-                    <h1><span>Pricing</span> Tables</h1>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ullam minima iure aliquam
-                    sed. Delectus quos obcaecati id similique! Numquam commodi praesentium neque est ex cumque
-                    voluptate voluptatum aliquam doloremque?</p>
-                <div class="buttons">
-                    <a href="#" class="btn purchase">PURCHASE NOW</a>
-                    <a href="#" class="btn more-detail">MORE DETAILS</a><br>
+            <div class="slideshow">
+
+                <div class="slider-dark">
+                    <img class="image" src="./images/icon-slider.png" alt="" class="icon-slider">
+                    <div class="title-slider">
+                        <div class="title1">Pricing </div>
+                        <div class="title2">Tables</div>
+                    </div>
+                    <div>
+                        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ullam
+                            minima iure
+                            aliquam
+                            sed. Delectus quos obcaecati id similique! Numquam commodi praesentium neque est ex cumque
+                            voluptate voluptatum aliquam doloremque?</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="#" class="btn purchase">PURCHASE NOW</a>
+                        <a href="#" class="btn more-detail">MORE DETAILS</a>
+                    </div>
                 </div>
 
-                <div class="round">
-                    <li class="round-pager active"><i class="fa fa-circle" aria-hidden="true"></i></li>
-                    <li class="round-pager"><i class="fa fa-circle-thin" aria-hidden="true"></i></li>
-                    <li class="round-pager"><i class="fa fa-circle-thin" aria-hidden="true"></i></li>
+                <div class="slider-dark">
+                    <img class="image" src="./images/icon-slider.png" alt="" class="icon-slider">
+                    <div class="title-slider">
+                        <div class="title1">Pricing </div>
+                        <div class="title2">Tables 2</div>
+                    </div>
+                    <div>
+                        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ullam
+                            minima iure
+                            aliquam
+                            sed. Delectus quos obcaecati id similique! Numquam commodi praesentium neque est ex cumque
+                            voluptate voluptatum aliquam doloremque?</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="#" class="btn purchase">PURCHASE NOW</a>
+                        <a href="#" class="btn more-detail">MORE DETAILS</a>
+                    </div>
+                </div>
+
+                <div class="slider-dark">
+                    <img class="image" src="./images/icon-slider.png" alt="" class="icon-slider">
+                    <div class="title-slider">
+                        <div class="title1">Pricing </div>
+                        <div class="title2">Tables 3</div>
+                    </div>
+                    <div>
+                        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ullam
+                            minima iure
+                            aliquam
+                            sed. Delectus quos obcaecati id similique! Numquam commodi praesentium neque est ex cumque
+                            voluptate voluptatum aliquam doloremque?</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="#" class="btn purchase">PURCHASE NOW</a>
+                        <a href="#" class="btn more-detail">MORE DETAILS</a>
+                    </div>
                 </div>
 
             </div>
+
+            <div class="currentSlide">
+                <span class="dot" name="0"></span>
+                <span class="dot" name="1"></span>
+                <span class="dot" name="2"></span>
+            </div>
+
         </div>
         <div class="arrow">
-            <a href="#"> <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-            <a href="#"> <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="prev"> <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+            <a class="next"> <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
     </header>
 
     <main class="middle">
         <div class="container title-light">
-            <h2 id="title">LOREM <span> IPSUM</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            <div class="title">LOREM <span> IPSUM</span></div>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
@@ -99,16 +144,16 @@
         <div class="container">
 
             <!-- Pricing Table 1 -->
-            <div class="pricing-table table1" id="table1">
+            <div class="pricing-table table1">
                 <div class="columns">
                     <ul class="price">
                         <li class="title-column">
-                            <div>
+                            <div class="title">
                                 BEGINER
                             </div>
                         </li>
                         <li class="price-number g1">
-                            <h2><span>$10</span><br>Per Month</h2>
+                            <div><span>$10</span><br>Per Month</div>
                         </li>
                         <li class="subtitle"></li>
                         <li>Drop out ramen hustle</li>
@@ -123,12 +168,12 @@
                 <div class="columns">
                     <ul class="price">
                         <li class="title-column">
-                            <div>
+                            <div class="title">
                                 ADVANCED
                             </div>
                         </li>
                         <li class="price-number g2">
-                            <h2><span>$45</span><br>Per Month</h2>
+                            <div><span>$45</span><br>Per Month</div>
                         </li>
                         <li class="subtitle"></li>
                         <li>Drop out ramen hustle</li>
@@ -145,18 +190,18 @@
                     <ul class="price">
 
                         <li class="title-column">
-                            <div>
-                                <h3 class="new-title">
+                            <div class="title">
+                                <div class="new-title">
                                     New
-                                </h3>
-                                <h1>MASTER</h1><small>The best price / quantity plan *</small>
+                                </div>
+                                <div>MASTER</div><small>The best price / quantity plan *</small>
                             </div>
                         </li>
                         <li class="price-number g3">
-                            <h2><span>$249</span><br>Per Month</h2>
+                            <div><span>$249</span><br>Per Month</div>
                         </li>
                         <li class="subtitle">
-                            <h1>Subtitle Goes Here</h1>
+                            <div class="sub">Subtitle Goes Here</div>
                             <small>Subtitle second line goes here</small>
                         </li>
                         <li>Drop out ramen hustle</li>
@@ -171,12 +216,12 @@
                 <div class="columns">
                     <ul class="price">
                         <li class="title-column">
-                            <div>
+                            <div class="title">
                                 INSANE
                             </div>
                         </li>
                         <li class="price-number g4">
-                            <h2><span>$1399</span><br>Per Month</h2>
+                            <div class="number"><span>$1399</span><br>Per Month</div>
                         </li>
                         <li class="subtitle"></li>
                         <li>Drop out ramen hustle</li>
@@ -191,17 +236,17 @@
             </div>
 
             <!-- Pricing Table 2 -->
-            <div class="pricing-table table2" id="table2">
+            <div class="pricing-table table2 responsive">
                 <div class="columns">
                     <ul class="price">
                         <li class="title-column">
-                            <div>
-                                BEGINER
-                                <h2>$99 Per Month</h2>
+                            <div class="title">
+                                <span>BEGINER</span>
+                                <div class="number">$99 Per Month</div>
                             </div>
                         </li>
                         <li class="subtitle">
-                            <h1>Subtitle Goes Here</h1>
+                            <span>Subtitle Goes Here</span><br>
                             <small>Subtitle second line goes here lorem ipsum</small>
                         </li>
                         <li>Drop out ramen hustle</li>
@@ -217,16 +262,17 @@
 
                     <ul class="price">
                         <li class="title-column">
-                            <div>
-                                <h3 class="new-title">
+                            <div class="title">
+                                <div class="new-title">
                                     New
-                                </h3>
-                                ADVANCED <h2>$199 Per Month</h2>
+                                </div>
+                                <span>ADVANCED</span>
+                                <div class="number">$199 Per Month</div>
                             </div>
                         </li>
 
                         <li class="subtitle">
-                            <h1>Subtitle Goes Here</h1>
+                            <span>Subtitle Goes Here</span><br>
                             <small>Subtitle second line goes here lorem ipsum</small>
                         </li>
                         <li>Drop out ramen hustle</li>
@@ -241,14 +287,15 @@
                 <div class="columns">
                     <ul class="price">
                         <li class="title-column" style="color: white;">
-                            <div id="ultimate">
-                                ULTIMATE <h2>$299 Per Month</h2>
+                            <div class="title ultimate">
+                                <span>ULTIMATE</span>
+                                <div class="number">$299 Per Month</div>
                                 <small>The best price/quality plan *</small>
                             </div>
                         </li>
 
                         <li class="subtitle">
-                            <h1>Subtitle Goes Here</h1>
+                            <span>Subtitle Goes Here</span><br>
                             <small>Subtitle second line goes here lorem ipsum</small>
                         </li>
                         <li>Drop out ramen hustle</li>
@@ -263,22 +310,22 @@
             </div>
 
             <!-- Pricing Table 3 -->
-            <div class="pricing-table table3" id="table3">
+            <div class="pricing-table table3">
                 <div class="columns">
                     <ul class="price">
                         <li class="subtitle">
-                            <div>
-                                <h1>Lorem Ipsum</h1> <small>Subtitle second line goes here</small>
+                            <div class="title">
+                                <span class="name">Lorem Ipsum</span><br> <small>Subtitle second line goes here</small>
                             </div>
                         </li>
                         <li class="price-number">
                             <div>
-                                <h2><span>$10</span><br>
-                                    <small>per month</small></h2>
+                                <span>$10</span><br>
+                                <small>per month</small>
                             </div>
                         </li>
                         <li class="title-column">
-                            <h1>Basic</h1>
+                            <span>Basic</span>
                         </li>
                         <li>
                             <hr>
@@ -297,20 +344,20 @@
                     <ul class="price">
 
                         <li class="subtitle">
-                            <div>
-                                <h3 class="new-title">
+                            <div class="title">
+                                <div class="new-title">
                                     New
-                                </h3>
-                                <h1>Lorem Ipsum</h1> <small>Subtitle second line goes here</small>
+                                </div>
+                                <span class="name">Lorem Ipsum</span> <br> <small>Subtitle second line goes here</small>
                             </div>
                         </li>
                         <li class="price-number">
                             <div>
-                                <h2><span>$45</span><br><small>per month</small></h2>
+                                <span>$45</span><br><small>per month</small>
                             </div>
                         </li>
                         <li class="title-column">
-                            <h1>Standard</h1>
+                            <span>Standard</span>
                         </li>
                         <li>
                             <hr>
@@ -327,19 +374,19 @@
                 <div class="columns ultimate">
                     <ul class="price">
                         <li class="subtitle">
-                            <div>
-                                <h1>Subtitle Goes Here</h1>
+                            <div class="title">
+                                <span class="name">Subtitle Goes Here</span><br>
                                 <small>Subtitle second line goes here</small>
                             </div>
                         </li>
                         <li class="price-number">
                             <div>
-                                <h2><span>$249</span><br>
-                                    <small>per month</small></h2>
+                                <span>$249</span><br>
+                                <small>per month</small>
                             </div>
                         </li>
                         <li class="title-column">
-                            <h1>Ultimate</h1><small>The best price / quantity plan *</small>
+                            <span>Ultimate</span> <br><small>The best price / quantity plan *</small>
                         </li>
                         <li>
                             <hr>
@@ -356,18 +403,18 @@
                 <div class="columns">
                     <ul class="price">
                         <li class="subtitle">
-                            <div>
-                                <h1>Lorem Ipsum</h1> <small>Subtitle second line goes here</small>
+                            <div class="title">
+                                <span class="name">Lorem Ipsum</span><br> <small>Subtitle second line goes here</small>
                             </div>
                         </li>
                         <li class="price-number">
                             <div>
-                                <h2><span>$1399</span><br>
-                                    <small>per month</small></h2>
+                                <span>$1399</span><br>
+                                <small>per month</small>
                             </div>
                         </li>
                         <li class="title-column">
-                            <h1>Premium</h1>
+                            <span>Premium</span>
                         </li>
                         <li>
                             <hr>
@@ -389,21 +436,21 @@
             <div class="container">
 
                 <!-- Pricing Table 4 -->
-                <div class="pricing-table-dark table4" id="table4">
+                <div class="pricing-table-dark table4">
                     <div class="columns">
                         <ul class="price">
 
                             <li class="price-number">
                                 <div class="external blue">
                                     <div class="internal blue">
-                                        <h2><span>$99</span><br><small>per month</small></h2>
+                                        <span>$99</span><br><small>per month</small>
                                     </div>
                                 </div>
 
                             </li>
                             <li class="title-column blue">TINY</li>
                             <li class="subtitle">
-                                <h1>Subtitle goes here</h1>
+                                <span>Subtitle goes here</span><br>
                                 <small>Subtitle second line goes here *</small>
                             </li>
                             <li><i class="fa fa-check blue" aria-hidden="true"></i> Photo sharing school</li>
@@ -420,14 +467,14 @@
                             <li class="price-number">
                                 <div class="external violet">
                                     <div class="internal violet">
-                                        <h2><span>$99</span><br><small>per month</small></h2>
+                                        <span>$99</span><br><small>per month</small>
                                     </div>
                                 </div>
 
                             </li>
                             <li class="title-column violet">SMALL</li>
                             <li class="subtitle">
-                                <h1>Subtitle goes here</h1>
+                                <span>Subtitle goes here</span><br>
                                 <small>Subtitle second line goes here *</small>
                             </li>
                             <li><i class="fa fa-check violet" aria-hidden="true"></i> Photo sharing school</li>
@@ -445,15 +492,15 @@
                             <li class="price-number">
                                 <div class="external pink">
                                     <div class="internal pink">
-                                        <h2><span>$99</span><br><small>per month</small></h2>
+                                        <span>$99</span><br><small>per month</small>
                                     </div>
                                 </div>
                             </li>
                             <li class="title-column pink">
-                                <h1>MEDIUM</h1><small>The best price / quantity plan *</small>
+                                <div>MEDIUM</div><small>The best price / quantity plan *</small>
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle goes here</h1>
+                                <span>Subtitle goes here</span><br>
                                 <small>Subtitle second line goes here *</small>
                             </li>
                             <li><i class="fa fa-check pink" aria-hidden="true"></i> Photo sharing school</li>
@@ -466,21 +513,21 @@
                         </ul>
                     </div>
                     <div class="columns new">
-                        <h3 class="new-title" id="new-title">
+                        <div class="new-title">
                             New!
-                        </h3>
+                        </div>
                         <ul class="price">
 
                             <li class="price-number">
                                 <div class="external orange">
                                     <div class="internal orange">
-                                        <h2><span>$99</span><br><small>per month</small></h2>
+                                        <span>$99</span><br><small>per month</small>
                                     </div>
                                 </div>
                             </li>
                             <li class="title-column orange">LARGE</li>
                             <li class="subtitle">
-                                <h1>Subtitle goes here</h1>
+                                <span>Subtitle goes here</span><br>
                                 <small>Subtitle second line goes here *</small>
                             </li>
                             <li><i class="fa fa-check orange" aria-hidden="true"></i> Photo sharing school</li>
@@ -499,23 +546,23 @@
         <div class="tables tables-gray">
             <div class="container">
                 <!-- Pricing Table 5 -->
-                <div class="pricing-table-gray table5" id="table5">
+                <div class="pricing-table-gray table5 responsive">
                     <div class="columns">
 
                         <div class="price-number">
-                            <h3>$399</h3> <span>Per tour</span>
+                            <div class="number">$399</div><span>Per tour</span>
                         </div>
 
                         <ul class="price">
 
                             <li class="title-column ocean">
                                 <span>
-                                    <h1>Ocean</h1>
+                                    Ocean
                                 </span>
 
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle Goes Here</h1>
+                                <div>Subtitle Goes Here</div>
                                 <small>Subtitle second line goes here lorem ipsum *</small>
                             </li>
                             <li>Drop out ramen hustle</li>
@@ -528,18 +575,18 @@
                     </div>
                     <div class="columns new">
                         <div class="price-number">
-                            <h3 style="color: #7c3867;">$499</h3> <span>Per tour</span>
+                            <div class="number" style="color: #7c3867;">$499</div> <span>Per tour</span>
                         </div>
                         <div class="new-title">
                             <span>NEW</span>
                         </div>
                         <ul class="price">
                             <li class="title-column mountains">
-                                <h1>Moutains</h1>
+                                <span>Moutains</span><br>
                                 <small>The best price/quality plan *</small>
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle Goes Here</h1>
+                                <div>Subtitle Goes Here</div>
                                 <small>Subtitle second line goes here lorem ipsum *</small>
                             </li>
                             <li>Drop out ramen hustle</li>
@@ -552,14 +599,14 @@
                     </div>
                     <div class="columns new">
                         <div class="price-number">
-                            <h3 style="color: #9fd996;">$599</h3> <span>Per tour</span>
+                            <div class="number" style="color: #9fd996;">$599</div> <span>Per tour</span>
                         </div>
                         <ul class="price">
                             <li class="title-column forest" style="color: white;">
-                                <h1>Forest</h1>
+                                <span>Forest</span>
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle Goes Here</h1>
+                                <div>Subtitle Goes Here</div>
                                 <small>Subtitle second line goes here lorem ipsum *</small>
                             </li>
                             <li>Drop out ramen hustle</li>
@@ -578,21 +625,20 @@
         <div class="tables tables-white">
             <div class="container">
                 <!-- Pricing Table 6 -->
-                <div class="pricing-table-white table6" id="table6">
+                <div class="pricing-table-white table6 responsive">
                     <div class="columns basic">
 
                         <div class="price-number">
-                            <h3>$399</h3> <small>/ Per tour</small>
+                            <div class="number">$399</div> <small>/ Per tour</small>
                         </div>
 
                         <ul class="price ">
 
                             <li class="title-column">
-                                <h1>Basic <br><span>Price Plan</span>
-                                </h1>
+                                <div class="title">Basic</div><span>Price Plan</span>
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle Goes Here</h1>
+                                <div>Subtitle Goes Here</div>
                                 <small>Subtitle second line goes here lorem ipsum *</small>
                             </li>
                             <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Drop out ramen hustle
@@ -609,7 +655,7 @@
                     </div>
                     <div class="columns new advanced">
                         <div class="price-number">
-                            <h3>$499</h3> <small>/ Per tour</small>
+                            <div class="number">$499</div> <small>/ Per tour</small>
                         </div>
                         <div class="new-title">
                             <span>NEW</span>
@@ -617,12 +663,11 @@
                         <ul class="price ">
 
                             <li class="title-column ">
-                                <h1>Advanced <p> Price Plan</p>
-                                </h1>
-                                <small>This is the very best price/quality advanced plan *</small>
+                                <div class="title">Advanced </div> <span> Price Plan</span><br>
+                                <small class="best-price">This is the very best price/quality advanced plan *</small>
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle Goes Here</h1>
+                                <div>Subtitle Goes Here</div>
                                 <small>Subtitle second line goes here lorem ipsum *</small>
                             </li>
                             <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Drop out ramen hustle
@@ -639,15 +684,14 @@
                     </div>
                     <div class="columns life">
                         <div class="price-number">
-                            <h3>$599</h3> <small>/ Per tour</small>
+                            <div class="number">$599</div> <small>/ Per tour</small>
                         </div>
                         <ul class="price ">
                             <li class="title-column ">
-                                <h1>Life <p>Tarrif</p>
-                                </h1>
+                                <div class="title">Life </div> <span>Tarrif</span>
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle Goes Here</h1>
+                                <div>Subtitle Goes Here</div>
                                 <small>Subtitle second line goes here lorem ipsum *</small>
                             </li>
                             <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Drop out ramen hustle
@@ -672,16 +716,16 @@
 
             <div class="container">
                 <!-- Pricing Table 7 -->
-                <div class="pricing-table-gray table7" id="table7">
+                <div class="pricing-table-gray table7">
                     <div class="columns">
                         <ul class="price">
 
                             <li class="title-column">
                                 <div class="title-header">
-                                    <h2>Newborns</h2>
+                                    <div class="title">Newborns</div>
                                 </div>
                                 <div class="price-number">
-                                    <h3>$5</h3> <small>Per Month</small>
+                                    <div class="number">$5</div> <small>Per Month</small>
                                     <div class="radius">
                                         <div class="radius-left"></div>
                                         <div class="radius-right"></div>
@@ -690,7 +734,7 @@
 
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle here</h1>
+                                <div class="sub">Subtitle here</div>
                                 <small>Subtitle second line goes here *</small>
                             </li>
                             <li>Photo sharing school
@@ -709,13 +753,13 @@
                         <ul class="price">
                             <li class="title-column">
                                 <div class="title-header">
-                                    <h3 class="new-title">
+                                    <div class="new-title">
                                         <span>NEW</span>
-                                    </h3>
-                                    <h2>Kids</h2>
+                                    </div>
+                                    <div class="title">Kids</div>
                                 </div>
                                 <div class="price-number">
-                                    <h3>$10</h3> <small>Per Month</small>
+                                    <div class="number">$10</div> <small>Per Month</small>
                                     <div class="radius">
                                         <div class="radius-left"></div>
                                         <div class="radius-right"></div>
@@ -723,7 +767,7 @@
                                 </div>
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle here</h1>
+                                <div class="sub">Subtitle here</div>
                                 <small>Subtitle second line goes here *</small>
                             </li>
                             <li>Photo sharing school
@@ -742,12 +786,12 @@
 
                             <li class="title-column ">
                                 <div class="title-header">
-                                    <h2>Teens <br>
+                                    <div class="title">Teens <br>
                                         <small>Best price/quality plan *</small>
-                                    </h2>
+                                    </div>
                                 </div>
                                 <div class="price-number">
-                                    <h3>$150</h3> <small>Per Month</small>
+                                    <div class="number">$150</div> <small>Per Month</small>
                                     <div class="radius">
                                         <div class="radius-left"></div>
                                         <div class="radius-right"></div>
@@ -755,7 +799,7 @@
                                 </div>
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle here</h1>
+                                <div class="sub">Subtitle here</div>
                                 <small>Subtitle second line goes here *</small>
                             </li>
                             <li>Photo sharing school
@@ -773,10 +817,10 @@
                         <ul class="price ">
                             <li class="title-column ">
                                 <div class="title-header">
-                                    <h2>Adults</h2>
+                                    <div class="title">Adults</div>
                                 </div>
                                 <div class="price-number">
-                                    <h3>$500</h3> <small>Per Month</small>
+                                    <div class="number">$500</div> <small>Per Month</small>
                                     <div class="radius">
                                         <div class="radius-left"></div>
                                         <div class="radius-right"></div>
@@ -784,7 +828,7 @@
                                 </div>
                             </li>
                             <li class="subtitle">
-                                <h1>Subtitle here</h1>
+                                <div class="sub">Subtitle here</div>
                                 <small>Subtitle second line goes here *</small>
                             </li>
                             <li>Photo sharing school
@@ -806,16 +850,16 @@
         <div class="tables tables-dark table8">
             <div class="container">
                 <!-- Pricing Table 8 -->
-                <div class="pricing-table-dark table8" id="table8">
+                <div class="pricing-table-dark table8">
                     <div class="columns">
                         <ul class="price">
 
                             <li class="title-column">
 
                                 <div class="price-number">
-                                    <h1>$5</h1> <small>/month</small>
+                                    <div class="number">$5</div> <small>/month</small>
                                 </div>
-                                <h2>First</h2>
+                                <div class="title">First</div>
                             </li>
                             <li>
                                 Photo sharing school
@@ -835,13 +879,13 @@
 
                         <ul class="price">
                             <li class="title-column">
-                                <h3 class="new-title">
+                                <div class="new-title">
                                     <span>NEW</span>
-                                </h3>
-                                <div class="price-number">
-                                    <h1>$10</h1> <small>/month</small>
                                 </div>
-                                <h2>Second</h2>
+                                <div class="price-number">
+                                    <div class="number">$10</div> <small>/month</small>
+                                </div>
+                                <div class="title">Second</div>
                             </li>
                             <li>
                                 Photo sharing school
@@ -861,15 +905,15 @@
                         <ul class="price ">
                             <li class="title-column">
                                 <div class="subtitle">
-                                    <h1>Subtitle goes here</h1>
+                                    <div>Subtitle goes here</div>
                                     <small>Subtitle second line goes here *</small>
                                 </div>
                                 <div class="price-number">
-                                    <h1>$15</h1> <small>/month</small>
+                                    <div class="number">$15</div> <small>/month</small>
                                 </div>
-                                <h2>Third <br>
-                                    <small>Best price/quality plan *</small>
-                                </h2>
+                                <div class="title">Third
+                                </div>
+                                <small>Best price / quality plan *</small>
                             </li>
                             <li>
                                 Photo sharing school
@@ -887,9 +931,9 @@
                         <ul class="price ">
                             <li class="title-column ">
                                 <div class="price-number">
-                                    <h1>$200</h1> <small>/month</small>
+                                    <div class="number">$200</div> <small>/month</small>
                                 </div>
-                                <h2>Fourth</h2>
+                                <div class="title">Fourth</div>
                             </li>
                             <li>
                                 Photo sharing school
@@ -911,8 +955,9 @@
         <div class="slider">
             <div class="container">
                 <img src="./images/icon_adblock.png" alt="" class="icon-slider">
-                <h1>AD BLOCK</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                <div class="title">AD BLOCK</div>
+                <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                     aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
@@ -944,7 +989,7 @@
                         </div>
                     </div>
                     <div class="contact">
-                        <h1>Contact <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
+                        <div class="title">Contact <i class="fa fa-caret-down" aria-hidden="true"></i></div>
                         <address>
                             <i class="fa fa-map-marker" aria-hidden="true"></i> Address <br>
                             908 New Hampshire Avenue Northwest #100, Washington DC <br>
@@ -965,7 +1010,7 @@
                 </div>
                 <div class="columns flex">
                     <div class="recent-post mg-bt">
-                        <h1>Recent Posts <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
+                        <div class="title">Recent Posts <i class="fa fa-caret-down" aria-hidden="true"></i></div>
                         <ul>
                             <li class="flex-li">
                                 <div>
@@ -998,7 +1043,7 @@
                         </ul>
                     </div>
                     <div class="useful-link">
-                        <h1>Useful Links <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
+                        <div class="title">Useful Links <i class="fa fa-caret-down" aria-hidden="true"></i></div>
                         <ul class="links">
                             <li>General information for users</li>
                             <li>Interactive fairy tables</li>
@@ -1010,7 +1055,7 @@
                 </div>
                 <div class="columns none-flex">
                     <div class="email mg-bt">
-                        <h1>Email Us <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
+                        <div class="title">Email Us <i class="fa fa-caret-down" aria-hidden="true"></i></div>
                         <form action="">
                             <div class="input-email">
                                 <input type="text" placeholder="Your name">
@@ -1025,26 +1070,44 @@
                             <button>Send message</button>
                         </form>
                     </div>
-                    <div class="project" id="project">
-                        <h1>Project/Client? <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
-                        <div class="flex-container">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                    <div class="project">
+                        <div class="title">Project/Client? <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                        <div class="slider-footer">
+                            <div class="flex-container">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="flex-container">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="flex-container">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
                         <div class="round-footer">
-                            <i class="fa fa-circle active" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
+                            <i class="fa fa-circle dot-footer" name="0" aria-hidden="true"></i>
+                            <i class="fa fa-circle dot-footer" name="1" aria-hidden="true"></i>
+                            <i class="fa fa-circle dot-footer" name="2" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
                 <div class="columns flex">
                     <div class="feed mg-bt">
-                        <h1>Flickr Feed <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
+                        <div class="title">Flickr Feed <i class="fa fa-caret-down" aria-hidden="true"></i></div>
                         <div class="flex-container">
                             <div></div>
                             <div></div>
@@ -1058,7 +1121,7 @@
                         </div>
                     </div>
                     <div class="newsletter">
-                        <h1>Newsletter <i class="fa fa-caret-down" aria-hidden="true"></i></h1>
+                        <div class="title">Newsletter <i class="fa fa-caret-down" aria-hidden="true"></i></div>
                         <p>
                             Subscibe to our MailChimp newsletter and stay up to date with all events coming straight in
                             your
@@ -1075,11 +1138,12 @@
         </div>
 
         <div class="menu-socials">
-            <div class="scroll-up">
-                <a href="#">
+
+            <a href="#">
+                <div class="scroll-up">
                     <i class="fa fa-angle-up" aria-hidden="true"></i>
-                </a>
-            </div>
+                </div>
+            </a>
             <div class="container">
                 <div class="copy-right">
                     <p><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2015 <span>CodexThems</span></p>
@@ -1109,6 +1173,9 @@
 
         </div>
     </footer>
+
+    <script type="text/javascript" src="js/responsive.js"></script>
+    <script type="text/javascript" src="js/slideshow.js"></script>
 </body>
 
 </html>

@@ -34,10 +34,9 @@
 .pricing-table.table1 .price:hover {
   background-color: #ffffff;
   cursor: pointer;
-  background-color: #ffffff;
   height: calc(100% + 25px);
 }
-.pricing-table.table1 .price:hover > .title-column div{
+.pricing-table.table1 .price:hover > .title-column .title{
   transform: translateY(-25px);
   background-color: #ffffff;
   border: 1px solid #dfe5e8;
@@ -52,8 +51,7 @@
 .pricing-table.table1 .price .title-column{
   padding: 0;
 }
-.pricing-table.table1 .price .title-column div{
-  position: relative;
+.pricing-table.table1 .price .title-column .title{
   border: 1px solid #dfe5e8;
   border-bottom: none;
   padding: 30px;
@@ -96,7 +94,7 @@
 .pricing-table.table1 .price .subtitle {
   height: 80px;
 }
-.price .subtitle h1 {
+.price .subtitle .sub {
   font-weight: 300;
   font-size: 26px;
 }
@@ -133,6 +131,7 @@ li small {
   color: #ffffff;
   transform: translateY(-55px);
   font-size: 12px;
+  z-index: 1;
 }
 
 .pricing-table.table1 .columns.new .title-column {
@@ -189,8 +188,6 @@ li small {
   padding: 0;
 }
 .pricing-table.table2 .price:hover {
-  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
-  /* border: 1px solid black; */
   cursor: pointer;
 }
 .pricing-table.table2 .price:hover > li{
@@ -203,7 +200,7 @@ li small {
 .pricing-table.table2 .price:hover > li:last-child{
   border-bottom:  1px solid black;
 }
-.pricing-table.table2 .price .title-column div{
+.pricing-table.table2 .price .title-column .title{
   position: relative;
   padding: 45px;
   background: #393d50;
@@ -211,11 +208,11 @@ li small {
   transition-duration: 0.5s;
   border-bottom: none;
 }
-.pricing-table.table2 .columns .title-column #ultimate{
+.pricing-table.table2 .columns .title-column .title.ultimate{
   padding: 35px;
   line-height: 30px;
 }
-.pricing-table.table2 .price:hover > .title-column div{
+.pricing-table.table2 .price:hover > .title-column .title{
   transform: translateY(-30px);
   /* border: 1px solid black; */
   border-bottom: none;
@@ -223,7 +220,7 @@ li small {
 .pricing-table.table2 div:last-child {
   margin-right: 0;
 }
-.pricing-table.table2 .title-column h2 {
+.pricing-table.table2 .title-column .number {
   color: #ffffff;
   font-size: 24px;
   font-weight: 100;
@@ -248,7 +245,7 @@ li small {
   padding: 30px 0;
   line-height: 25px;
 }
-.pricing-table.table2 .subtitle h1 {
+.pricing-table.table2 .subtitle span {
   color: #22c5da;
 }
 .pricing-table.table2 .order .button {
@@ -287,10 +284,10 @@ li small {
   cursor: pointer;
   height: calc(100% + 30px);
 }
-.pricing-table.table3 .price:hover > .title-column h1{
+.pricing-table.table3 .price:hover > .title-column span{
   color: #ffffff;
 }
-.pricing-table.table3 .price:hover > .subtitle div{
+.pricing-table.table3 .price:hover > .subtitle .title{
   transform: translateY(-30px);
   background-color: #393d50;
   border-bottom: none;
@@ -343,7 +340,7 @@ li small {
 .pricing-table.table3 .price:hover > .title-column small{
   color: #5f727f;
 }
-.pricing-table.table3 .price .subtitle div{
+.pricing-table.table3 .price .subtitle .title{
   position: relative;
   padding-top: 40px;
   background: #f0f3f2;
@@ -351,6 +348,10 @@ li small {
   transition-timing-function: ease;
   transition-duration: 0.5s;
   border-radius: 50px 50px 0 0;
+}
+.pricing-table.table3 .price .subtitle .name{
+  font-size: 22px;
+  font-weight: 300;
 }
 .pricing-table.table3 .subtitle small{
   font-size: 14px;
