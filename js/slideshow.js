@@ -67,11 +67,17 @@ function runSlideShow(
     })
   })
 
-  const controlInterval = (nextIndex, interval, navArrow, clickdot = true)=>{
+  const controlInterval = (nextIndex, interval, navArrow, clickDot = true) => {
     if(interval === INTERVAL.RUN) runClearInterval()
-    if(clickdot) clickDotShowSlide(nextIndex)
-    else controlShowSlides(navArrow)
-    if (interval === INTERVAL.RUN) runSetInterval()
+
+    if(clickDot) { 
+      clickDotShowSlide(nextIndex)
+    } else {
+      controlShowSlides(navArrow)
+    }
+
+    if(interval === INTERVAL.RUN) runSetInterval() 
+
     currentSlideIndex = nextIndex
   }
 
