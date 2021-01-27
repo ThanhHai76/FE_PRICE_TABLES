@@ -1,17 +1,21 @@
-const slidersHeader = document.querySelectorAll(".slider-dark")
-const sliderHeaderClass = slidersHeader[0].className
-const dotsHeader = document.querySelectorAll(".dot")
+const slidersHeader = document.querySelectorAll(".slider-dark"),
+      sliderHeaderClass = slidersHeader[0].className,
+      dotsHeader = document.querySelectorAll(".dot")
 
-const slidersFooter = document.querySelectorAll(".slider-footer .flex-container")
-const sliderFooterClass = slidersFooter[0].className
-const dotsFooter = document.querySelectorAll(".dot-footer")
+const slidersFooter = document.querySelectorAll(".slider-footer .flex-container"),
+      sliderFooterClass = slidersFooter[0].className,
+      dotsFooter = document.querySelectorAll(".dot-footer")
 
-const prevSlide = document.querySelector(".prev")
-const nextSlide = document.querySelector(".next")
+const prevSlide = document.querySelector(".prev"),
+      nextSlide = document.querySelector(".next")
 
 const NAV_ARROW = {
   LEFT: "left",
   RIGHT: "right",
+},
+INTERVAL = {
+  RUN: true,
+  STOP: false
 }
 
 // Slideshow header
@@ -51,23 +55,25 @@ function runSlideShow(
     })
   }
 
-  const navigateSlide = (navArrow, interval = true) => {
-    if (interval) runClearInterval()
+  const navigateSlide = (navArrow, interval = INTERVAL.RUN) => {
     nextSlideIndex = getNextSlideIndex(navArrow, sliders, currentSlideIndex)
-    controlShowSlides(navArrow)
-    if (interval) runSetInterval()
-    currentSlideIndex = nextSlideIndex
+    controlInterval(nextSlideIndex, interval, navArrow , false)
   }
 
   dots.forEach((element) => {
     element.addEventListener("click", function () {
-      runClearInterval()
       const dotIndex = Number(element.getAttribute("name"))
-      clickDotShowSlide(dotIndex)
-      runSetInterval()
-      currentSlideIndex = dotIndex
+      controlInterval(dotIndex, INTERVAL.RUN)
     })
   })
+
+  const controlInterval = (nextIndex, interval, navArrow, clickdot = true)=>{
+    if(interval === INTERVAL.RUN) runClearInterval()
+    if(clickdot) clickDotShowSlide(nextIndex)
+    else controlShowSlides(navArrow)
+    if (interval === INTERVAL.RUN) runSetInterval()
+    currentSlideIndex = nextIndex
+  }
 
   const clickDotShowSlide = (dotIndex) => {
     if (
@@ -96,7 +102,7 @@ function runSlideShow(
 
   const runSetInterval = () => {
     showInterval = setInterval(() => {
-      navigateSlide(NAV_ARROW.RIGHT, false)
+      navigateSlide(NAV_ARROW.RIGHT, INTERVAL.STOP)
     }, autoPlay.delay)
   }
 
